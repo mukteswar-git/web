@@ -1,0 +1,159 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Level 1</title>
+  <style>
+    /* Internal CSS Example */
+    .internal-style {
+      color: green;
+      font-size: 20px;
+    }
+
+    hr {
+      margin: 20px 0;
+    }
+  </style>
+  <link rel="stylesheet" href="style.css">
+</head>
+<body>
+  <h1>Level 1: CSS Basics</h1>
+  <h2>Topics</h2>
+  <ul>
+    <li>What is CSS?</li>
+    <li>Inline, Internal, External CSS</li>
+    <li>CSS Syntax (selector, property, value)</li>
+    <li>Color values: name, hex, rgb(), hsl()</li>
+    <li>Units: px, em, %, rem</li>
+  </ul>
+  <hr>
+  <h2>What is CSS?</h2>
+  <p>CSS (Cascading Style Sheets) is a stylesheet language used to describe the presentation (look and layout) of an HTML document. It controls how elements appear on the screen — including colors, fonts, spacing, positioning, and responsiveness.</p>
+  <h2>Inline, Internal, External CSS</h2>
+  <h3>Inline CSS</h3>
+  <h3>1️⃣ Inline CSS</h3>
+  <p style="color: red; font-size: 18px;">
+    This paragraph is styled using <strong>Inline CSS</strong>.
+  </p>
+  <!-- Note: Inline CSS is added directly to the element using the 'style' attribute -->
+
+  <h3>2️⃣ Internal CSS</h3>
+  <p class="internal-style">
+    This paragraph uses <strong>Internal CSS</strong> via the &lt;style&gt; tag in the &lt;head&gt;.
+  </p>
+
+  <h3>3️⃣ External CSS</h3>
+  <p class="external-style">
+    This would be styled using <strong>External CSS</strong> (but for demo purposes, styles are added internally).
+  </p>
+  <h2>CSS Syntax (selector, property, value)</h2>
+  <h3>What is CSS Syntax?</h3>
+  <p>CSS syntax defines how you write styling rules. Each rule consists of a <strong>selector</strong>, followed by curly braces <code>{ }</code>, containing one or more <strong>property-value</strong> pairs.</p>
+  <h3>1️⃣ Selector</h3>
+  <p>
+    A <strong>selector</strong> targets the HTML element you want to style. It can be a tag name, a class, or an ID.
+  </p>
+  <h4>Example:</h4>
+  <pre><code>p {
+    color: red;
+  }</code></pre>
+  <p>This targets all <code>&lt;p&gt;</code> tags.</p>
+
+  <h3>2️⃣ Property</h3>
+  <p>
+    A <strong>property</strong> is the style feature you want to change, such as <code>color</code>, <code>font-size</code>, or <code>margin</code>.
+  </p>
+
+  <h3>3️⃣ Value</h3>
+  <p>
+    The <strong>value</strong> sets how that property should appear, like <code>red</code>, <code>16px</code>, or <code>center</code>.
+  </p>
+  <h2>Color Values in CSS</h2>
+  <p>
+    In CSS, you can define colors in multiple formats depending on your needs. Here are the four most common types:
+  </p>
+
+  <h3>1️⃣ Color Name</h3>
+  <p>
+    Use predefined color names like <code>red</code>, <code>blue</code>, <code>green</code>, etc.
+  </p>
+  <pre><code>h2 {
+    color: red;
+  }</code></pre>
+  <p style="color: red;"><strong>Example:</strong> This text uses the color name <code>red</code>.</p>
+
+  <h3>2️⃣ HEX Value</h3>
+  <p>
+    HEX (hexadecimal) values start with <code>#</code> followed by six digits. Example: <code>#ff0000</code> (red).
+  </p>
+  <pre><code>h2 {
+    color: #00ff00;
+  }</code></pre>
+  <p style="color: #00ff00;"><strong>Example:</strong> This text uses HEX <code>#00ff00</code>.</p>
+
+  <h3>3️⃣ RGB()</h3>
+  <p>
+    RGB stands for <strong>Red, Green, Blue</strong>. You define values from 0 to 255.
+  </p>
+  <pre><code>h2 {
+    color: rgb(0, 0, 255);
+  }</code></pre>
+  <p style="color: rgb(0, 0, 255);"><strong>Example:</strong> This text uses RGB <code>rgb(0, 0, 255)</code>.</p>
+
+  <h3>4️⃣ HSL()</h3>
+  <p>
+    HSL stands for <strong>Hue, Saturation, Lightness</strong>. Example: <code>hsl(120, 100%, 50%)</code> (green).
+  </p>
+  <pre><code>h2 {
+    color: hsl(120, 100%, 50%);
+  }</code></pre>
+  <p style="color: hsl(120, 100%, 50%);"><strong>Example:</strong> This text uses HSL <code>hsl(120, 100%, 50%)</code>.</p>
+  <h2>CSS Units: px, em, %, rem</h2>
+  <p>
+    CSS uses different units to define length, size, spacing, etc. The most common units are:
+  </p>
+
+  <h3>1️⃣ px (Pixels)</h3>
+  <p>
+    A pixel is a fixed unit of measurement. It doesn't scale based on other elements. Good for exact spacing.
+  </p>
+  <pre><code>p {
+    font-size: 20px;
+  }</code></pre>
+  <p style="font-size: 20px;"><strong>Example:</strong> This paragraph uses <code>20px</code> font size.</p>
+
+  <h3>2️⃣ em (Relative to Parent)</h3>
+  <p>
+    <code>1em</code> equals the font size of the parent element. If the parent font size is 16px, then <code>1.5em</code> = 24px.
+  </p>
+  <pre><code>p {
+    font-size: 1.5em;
+  }</code></pre>
+  <div style="font-size: 16px;">
+    <p style="font-size: 1.5em;"><strong>Example:</strong> This is <code>1.5em</code> inside a 16px parent.</p>
+  </div>
+
+  <h3>3️⃣ % (Percentage)</h3>
+  <p>
+    Percentage is relative to the parent element's size. Commonly used for width, height, and margins.
+  </p>
+  <pre><code>div {
+    width: 50%;
+  }</code></pre>
+  <div style="width: 100%; background: #ddd;">
+    <div style="width: 50%; background: #4ade80; color: white; padding: 5px;">
+      <strong>Example:</strong> This box is 50% wide.
+    </div>
+  </div>
+
+  <h3>4️⃣ rem (Root em)</h3>
+  <p>
+    <code>1rem</code> equals the font size of the root element (<code>&lt;html&gt;</code>). By default, it's 16px.
+  </p>
+  <pre><code>p {
+    font-size: 2rem;
+  }</code></pre>
+  <p style="font-size: 2rem;"><strong>Example:</strong> This is <code>2rem</code> = 32px (if root is 16px).</p>
+</body>
+</html>
