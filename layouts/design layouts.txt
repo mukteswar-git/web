@@ -1,0 +1,14 @@
+Website design layouts:
+1. Zig-Zag Layout
+2. Grid Layout
+3. Asymmetrical Layout
+4. Modular Layout
+5. Radial Symmetry Layout
+6. F Layout
+7. One-Column Layout
+8. Split Screen Layout
+9. Magazine Layout
+10. Full-Screen Photo
+11. Featured Image Layout
+12. Headline and Thumbnails Gallery Layout
+13. Single Page Layout

@@ -1,0 +1,91 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8" />
+<meta name="viewport" content="width=device-width, initial-scale=1" />
+<title>Product Card - Level 2 CSS</title>
+
+<!-- Google Fonts -->
+<link href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;700&display=swap" rel="stylesheet" />
+
+<style>
+  body {
+    font-family: 'Poppins', sans-serif;
+    background-color: #f3f4f6;
+    margin: 20px;
+  }
+
+  .product-card {
+    background-color: #ffffff;
+    border: 2px solid #1e3a8a; /* border */
+    border-radius: 12px;
+    width: 300px; /* width */
+    padding: 20px; /* padding */
+    margin: 0 auto; /* center horizontally */
+    text-align: center; /* text alignment */
+  }
+
+  .product-image {
+    width: 100%; /* width */
+    height: 200px; /* height */
+    background-image: url('');
+    background-repeat: no-repeat; /* no repeat */
+    background-position: center; /* position */
+    background-size: cover;
+    border-radius: 10px; /* border radius */
+    margin-bottom: 15px; /* margin */
+  }
+
+  .product-title {
+    font-size: 1.5rem; /* font size */
+    font-weight: 700; /* font weight */
+    margin: 15px 0 8px 0; /* margin */
+    color: #1e3a8a;
+  }
+
+  .product-price {
+    font-size: 1.25rem;
+    font-weight: 600;
+    color: #f59e0b;
+    margin-bottom: 12px;
+  }
+
+  .product-description {
+    font-size: 1rem;
+    line-height: 1.4; /* line height */
+    color: #4b5563;
+    margin-bottom: 20px;
+  }
+
+  .buy-button {
+    background-color: #1e3a8a;
+    color: white;
+    font-weight: 700;
+    padding: 12px 25px; /* padding */
+    border: none; /* border */
+    border-radius: 8px;
+    cursor: pointer;
+    text-transform: uppercase; /* text decoration */
+    letter-spacing: 1px; /* text decoration */
+  }
+
+  /* Simple hover effect using color change (allowed) */
+  .buy-button:hover {
+    background-color: #14315a;
+  }
+</style>
+</head>
+<body>
+
+  <div class="product-card">
+    <div class="product-image"></div>
+    <h2 class="product-title">Wireless Headphones</h2>
+    <p class="product-price">$99.99</p>
+    <p class="product-description">
+      High-quality wireless headphones with noise cancellation and long-lasting battery.
+    </p>
+    <button class="buy-button">Buy Now</button>
+  </div>
+
+</body>
+</html>

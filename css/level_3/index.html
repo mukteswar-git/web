@@ -1,0 +1,261 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Level 3</title>
+  <style>
+   body {
+      font-family: sans-serif;
+    }
+
+    h1 {
+      background-color: #111827;
+      color: white;
+      padding: 16px;
+      text-align: center;
+    }
+
+    h2 {
+      color: #1e3a8a;
+    }
+
+    .note {
+      color: gray;
+      margin-bottom: 10px;
+    }
+
+    .block {
+      display: block;
+      background-color: #4f46e5; /* Indigo */
+    }
+
+    .inline {
+      display: inline;
+      background-color: #10b981; /* Emerald */
+    }
+
+    .inline-block {
+      display: inline-block;
+      width: 120px;
+      height: 60px;
+      background-color: #f59e0b; /* Amber */
+    }
+
+    .none {
+      display: none;
+      background-color: #6b7280; /* Gray */
+    }
+    .section {
+      margin: 40px;
+    }
+
+    .box {
+      width: 200px;
+      height: 100px;
+      padding: 16px;
+      color: white;
+      font-weight: bold;
+      border-radius: 8px;
+      margin: 20px 0;
+    }
+
+    /* Static */
+    .static {
+      position: static; /* default */
+      background-color: #6366f1;
+    }
+
+    /* Relative */
+    .relative {
+      position: relative;
+      top: 20px;
+      left: 20px;
+      background-color: #22c55e;
+    }
+
+    /* Absolute inside relative container */
+    .abs-container {
+      position: relative;
+      border: 2px dashed #ccc;
+      padding: 20px;
+      height: 150px;
+    }
+
+    .absolute {
+      position: absolute;
+      top: 10px;
+      right: 10px;
+      background-color: #ef4444;
+    }
+
+    /* Fixed */
+    .fixed {
+      position: fixed;
+      bottom: 20px;
+      right: 20px;
+      background-color: #0ea5e9;
+      z-index: 999;
+    }
+
+    /* Sticky */
+    .sticky {
+      position: sticky;
+      top: 0;
+      background-color: #f59e0b;
+      padding: 16px;
+      text-align: center;
+    }
+    .float-box {
+    width: 150px;
+    height: 100px;
+    background-color: #4CAF50;
+    color: white;
+    padding: 10px;
+    margin: 10px;
+  }
+
+  .float-left {
+    float: left;
+  }
+
+  .float-right {
+    float: right;
+  }
+
+  .clear-both {
+    clear: both;
+    background-color: #f2f2f2;
+    padding: 10px;
+    margin-top: 10px;
+  }
+   .container {
+    display: flex;
+    border: 2px solid #333;
+    height: 200px;
+  }
+
+  .sidebar {
+    flex: 1; /* takes 1 part */
+    background-color: #4CAF50;
+    color: white;
+    padding: 10px;
+  }
+
+  .main-content {
+    flex: 3; /* takes 3 parts */
+    background-color: #2196F3;
+    color: white;
+    padding: 10px;
+  }
+  </style>
+</head>
+<body>
+  <h1>Level 3: Layout & Positioning</h1>
+  <h2>Topics:</h2>
+  <ul>
+    <li>display: block, inline, inline-block, none</li>
+    <li>position: static, relative, absolute, fixed, sticky</li>
+    <li>Float and clear (older but useful)</li>
+    <li>Flexbox (🔥 must learn)</li>
+    <li>CSS Grid (for advanced layout control)</li>
+  </ul>
+  <h2>Practice</h2>
+  <ul>
+    <li>Create a two-column layout with Flexbox.</li>
+    <li>Center elements using Flexbox.</li>
+    <li>Use Flexbox Froggy to master Flexbox interactively.</li>
+  </ul>
+  <hr>
+
+  <h2>Display Property in CSS</h2>
+
+  <h2>🔹 Block</h2>
+  <p class="note">Takes full width, starts on a new line.</p>
+  <div class="box block">Block 1</div>
+  <div class="box block">Block 2</div>
+
+  <h2>🔹 Inline</h2>
+  <p class="note">Takes only the required width, stays in line.</p>
+  <span class="box inline">Inline 1</span>
+  <span class="box inline">Inline 2</span>
+
+  <h2>🔹 Inline-Block</h2>
+  <p class="note">Behaves like inline, but allows width and height.</p>
+  <div class="box inline-block">Box 1</div>
+  <div class="box inline-block">Box 2</div>
+
+  <h2>🔹 None</h2>
+  <p class="note">Completely hides the element (invisible and no space).</p>
+  <div class="box none">Hidden Box 😅</div>
+  <h2>🎯 CSS Position: Explained with Examples</h2>
+
+  <!-- 📌 Sticky Header: stays at the top of the screen when scrolling -->
+  <div class="sticky">📌 I am Sticky - I stay at the top when you scroll!</div>
+
+  <!-- ✅ Static (default flow) -->
+  <div class="section">
+    <h2>1️⃣ Static (Default)</h2>
+    <div class="box static">
+      <strong>position: static</strong><br/>
+      👉 Normal flow, no shift with top/left
+    </div>
+  </div>
+
+  <!-- ✅ Relative: moves relative to its normal place -->
+  <div class="section">
+    <h2>2️⃣ Relative</h2>
+    <div class="box relative">
+      <strong>position: relative</strong><br/>
+      👉 Moved 20px down and 30px right from normal position
+    </div>
+  </div>
+
+  <!-- ✅ Absolute inside relative parent -->
+  <div class="section">
+    <h2>3️⃣ Absolute (Inside Relative Container)</h2>
+    <div class="abs-container">
+      <div class="box absolute">
+        <strong>position: absolute</strong><br/>
+        👉 Top-right corner of parent (because parent is relative)
+      </div>
+      <p>This is the relative container.</p>
+    </div>
+  </div>
+
+  <!-- ✅ Fixed box that stays on screen always -->
+  <div class="section">
+    <h2>4️⃣ Fixed</h2>
+    <p>📌 Scroll down and you will see the fixed box stays visible at bottom-right of screen.</p>
+  </div>
+
+  <!-- 🔒 Fixed Box: always stays at bottom-right corner -->
+  <div class="box fixed">
+    <strong>position: fixed</strong><br/>
+    👉 Always at bottom-right of the screen
+  </div>
+  <h2>Float and Clear Demo</h2>
+
+  <div class="float-box float-left">
+    I float left.
+  </div>
+
+  <div class="float-box float-right">
+    I float right.
+  </div>
+
+  <p>
+    This paragraph wraps around the floated boxes because floats remove elements from normal flow.
+  </p>
+
+  <div class="clear-both">
+    I clear both floats. I appear below the floated elements.
+  </div>
+  <h2>Flexbox: Two-Column Layout</h2>
+
+  <div class="container">
+    <div class="sidebar">Sidebar (1 part)</div>
+    <div class="main-content">Main Content (3 parts)</div>
+  </div>
+</body>
+</html>

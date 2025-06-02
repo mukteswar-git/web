@@ -1,0 +1,105 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Level 5: Responsive Design & Effects</title>
+  <style>
+    body {
+      font-family: Arial, sans-serif;
+      margin: 0;
+      padding: 20px;
+      line-height: 1.6;
+    }
+
+    h1 {
+      text-align: center;
+      margin-bottom: 40px;
+    }
+
+    /* 1️⃣ CSS Transitions */
+    .transition-box {
+      background-color: royalblue;
+      color: white;
+      padding: 20px;
+      text-align: center;
+      width: 200px;
+      margin: auto;
+      border-radius: 10px;
+      transition: background-color 0.4s ease; /* 🔄 Smooth change */
+    }
+
+    .transition-box:hover {
+      background-color: darkblue;
+    }
+
+    /* 2️⃣ Responsive Layout with Flexbox + Media Queries */
+    .flex-container {
+      display: flex;
+      gap: 20px;
+      justify-content: space-around;
+      margin-top: 40px;
+      flex-wrap: wrap;
+    }
+
+    .flex-box {
+      flex: 1 1 300px;
+      background-color: #f0f0f0;
+      padding: 20px;
+      text-align: center;
+      border: 1px solid #ccc;
+      border-radius: 8px;
+    }
+
+    @media (max-width: 600px) {
+      body {
+        background-color: #fff9e6; /* Light yellow for smaller screens */
+      }
+
+      .flex-box {
+        background-color: #dff3ff;
+      }
+    }
+
+    /* 3️⃣ Viewport Units */
+    .hero {
+      height: 40vh;
+      width: 100vw;
+      background: linear-gradient(to right, #89f7fe, #66a6ff);
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      color: #333;
+      font-size: 2rem;
+      font-weight: bold;
+      margin-top: 40px;
+    }
+  </style>
+</head>
+<body>
+  <h1>🎯 Level 5: Responsive Design & Effects</h1>
+
+  <!-- 1️⃣ CSS Transition -->
+  <section>
+    <h2>1️⃣ CSS Transitions</h2>
+    <p>Hover over the box to see the background color transition smoothly.</p>
+    <div class="transition-box">Hover Me!</div>
+  </section>
+
+  <!-- 2️⃣ Media Query Responsive Layout -->
+  <section>
+    <h2>2️⃣ Responsive Layout with Media Queries</h2>
+    <p>Resize the browser to see layout and background changes below 600px.</p>
+    <div class="flex-container">
+      <div class="flex-box">Box 1</div>
+      <div class="flex-box">Box 2</div>
+      <div class="flex-box">Box 3</div>
+    </div>
+  </section>
+
+  <!-- 3️⃣ Viewport Units Example -->
+  <section class="hero">
+    Hero Section – 100vw × 40vh
+  </section>
+</body>
+</html>

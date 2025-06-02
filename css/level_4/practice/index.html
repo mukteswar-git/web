@@ -1,0 +1,80 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Level 4 - Practice</title>
+  <style>
+    body {
+      font-family: Arial, sans-serif;
+      padding: 20px;
+    }
+
+    /* ✅ 1. Button hover effect */
+    button {
+      background-color: royalblue;
+      color: white;
+      padding: 10px 20px;
+      border: none;
+      border-radius: 8px;
+      cursor: pointer;
+      transition: background 0.3s ease;
+    }
+
+    button:hover {
+      background-color: darkblue;
+    }
+
+    /* ✅ 2. Style odd/even list items */
+    ul li:nth-child(odd) {
+      background-color: #f0f0f0;
+    }
+
+    ul li:nth-child(even) {
+      background-color: #d0eaff;
+    }
+
+    /* ✅ 3. Attribute selector for input[type] */
+    input[type="text"] {
+      border: 2px solid royalblue;
+      padding: 5px;
+      margin: 5px 0;
+    }
+
+    input[required] {
+      background-color: #fff3cd;
+    }
+  </style>
+</head>
+<body>
+  <h2>Practice</h2>
+  <ul>
+    <li>Style a button that changes color on hover.</li>
+    <li>Style odd and even list items</li>
+    <li>Highlight specific inputs using attribute selectors.</li>
+  </ul>
+
+   <h1>🎯 Practice Tasks – Level 4</h1>
+
+  <h2>1️⃣ Button Hover</h2>
+  <button>Hover Me</button>
+
+  <h2>2️⃣ Odd/Even List Styling</h2>
+  <ul>
+    <li>List Item 1</li>
+    <li>List Item 2</li>
+    <li>List Item 3</li>
+    <li>List Item 4</li>
+    <li>List Item 5</li>
+  </ul>
+
+  <h2>3️⃣ Input Highlight with Attribute Selector</h2>
+  <form>
+    <label>Name:</label><br>
+    <input type="text" placeholder="Your name" required><br>
+    <label>Email:</label><br>
+    <input type="email" placeholder="Your email"><br>
+  </form>
+
+</body>
+</html>

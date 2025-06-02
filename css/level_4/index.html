@@ -1,0 +1,186 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Level 4</title>
+  <style>
+    /* :hover */
+    .hover-box {
+      background-color: lightgray;
+      padding: 20px;
+      width: 200px;
+      text-align: center;
+      transition: background 0.3s;
+    }
+
+    .hover-box:hover {
+      background-color: gold;
+    }
+
+    /* :focus */
+    input:focus {
+      border: 2px solid blue;
+      outline: none;
+    }
+
+    /* :nth-child() */
+    .list li:nth-child(2) {
+      color: green;
+      font-weight: bold;
+    }
+
+    /* :first-child */
+    .list li:first-child {
+      color: red;
+    }
+    /* Universal selector: style everything */
+    * {
+      font-family: Arial;
+    }
+
+    /* Direct child */
+    .parent > p {
+      color: blue;
+    }
+
+    /* Adjacent sibling */
+    .adjacent + p {
+      background-color: yellow;
+    }
+
+    /* General sibling */
+    .general ~ p {
+      font-style: italic;
+      color: green;
+    }
+    /* [attr] - any input with a type */
+    input[type] {
+      border: 2px solid gray;
+      margin: 5px;
+    }
+
+    /* Exact match */
+    input[type="text"] {
+      background-color: #e0f7fa;
+    }
+
+    /* Starts with */
+    a[href^="https"] {
+      color: green;
+    }
+
+    /* Ends with */
+    a[href$=".pdf"] {
+      color: red;
+    }
+
+    /* Contains */
+    a[href*="example"] {
+      font-weight: bold;
+    }
+
+    /* Space-separated values (e.g., class="btn primary") */
+    [class~="highlight"] {
+      background: yellow;
+    }
+    p {
+      color: blue;
+    }
+
+    .warning {
+      color: orange;
+    }
+
+    .warning {
+      color: red !important;
+    }
+
+    /* Even this won't override !important */
+    .warning {
+      color: green;
+    }
+  </style>
+</head>
+<body>
+  <h1>Level 4: Advanced Selectors & Pseudo-classes</h1>
+  <h2>Topics</h2>
+  <ul>
+    <li>:hover, :focus, :nth-child(), :first-child</li>
+    <li>Combinators: *, >, +, ~</li>
+    <li>Attribute selectors (e.g., [type="text"])</li>
+    <li>!important – use wisely</li>
+  </ul>
+  <h2>Practice</h2>
+  <ul>
+    <li>Style a button that changes color on hover.</li>
+    <li>Style odd and even list items</li>
+    <li>Highlight specific inputs using attribute selectors.</li>
+  </ul>
+
+  <h1>🎯 Level 4: Advanced Selectors & Pseudo-classes</h1>
+
+  <h2>1. :hover</h2>
+  <div class="hover-box">Hover over me 👆</div>
+  <p>🔍 Changes background when you hover the mouse.</p>
+
+  <h2>2. :focus</h2>
+  <input type="text" placeholder="Click here..." />
+  <p>🔍 Border becomes blue when input is focused.</p>
+
+  <h2>3. :nth-child()</h2>
+  <ul class="list">
+    <li>Item 1 (red - first child)</li>
+    <li>Item 2 (green - second child)</li>
+    <li>Item 3</li>
+    <li>Item 4</li>
+  </ul>
+  <p>🔍 nth-child(2) highlights the 2nd item, first-child targets the first.</p>
+
+  <h1>🎯 CSS Combinators Explained</h1>
+
+  <h2>1️⃣ Universal Selector (*)</h2>
+  <p>Everything uses Arial font because of `*` selector.</p>
+
+  <h2>2️⃣ Child Selector (>)</h2>
+  <div class="parent">
+    <p>I'm a direct child — Blue</p>
+    <div>
+      <p>I am nested, so not selected</p>
+    </div>
+  </div>
+
+  <h2>3️⃣ Adjacent Sibling (+)</h2>
+  <div class="adjacent">I'm the target element</div>
+  <p>This p is selected (adjacent) — Yellow background</p>
+  <p>This one is not selected</p>
+
+  <h2>4️⃣ General Sibling (~)</h2>
+  <div class="general">I come before my siblings</div>
+  <p>I am affected — Green and italic</p>
+  <p>Me too — because I come after the `.general`</p>
+
+  <h1>🎯 CSS Attribute Selectors</h1>
+
+  <h2>1️⃣ Inputs</h2>
+  <input type="text" placeholder="Text input" />
+  <input type="password" placeholder="Password input" />
+  <input type="email" placeholder="Email input" />
+
+  <h2>2️⃣ Anchor Tags</h2>
+  <a href="https://example.com">Secure Link</a><br />
+  <a href="https://docs.com/file.pdf">PDF Link</a><br />
+  <a href="http://another.com/example">Contains 'example'</a>
+
+  <h2>3️⃣ Space-separated Attribute (~)</h2>
+  <div class="box highlight">This has the class 'highlight'</div>
+  <div class="box important">This does NOT have the class 'highlight'</div>
+
+  <h1>🎯 CSS !important Example</h1>
+
+  <p>This is a normal paragraph.</p>
+
+  <p class="warning">This warning text is red because of !important.</p>
+
+</body>
+</html>
