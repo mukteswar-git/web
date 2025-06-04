@@ -1,0 +1,187 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <title>JavaScript Conditionals</title>
+  <style>
+    body {
+      font-family: 'Segoe UI', sans-serif;
+      background-color: #f0f4f8;
+      color: #333;
+      margin: 0;
+      padding: 20px;
+    }
+
+    header {
+      text-align: center;
+      margin-bottom: 30px;
+    }
+
+    h1 {
+      color: #1e3a8a;
+    }
+
+    section {
+      background: #fff;
+      padding: 20px;
+      margin-bottom: 20px;
+      border-radius: 10px;
+      box-shadow: 0 4px 10px rgba(0, 0, 0, 0.05);
+    }
+
+    h2 {
+      color: #2563eb;
+    }
+
+    code {
+      background: #e2e8f0;
+      padding: 2px 6px;
+      border-radius: 4px;
+    }
+
+    pre {
+      background: #1e293b;
+      color: #333;
+      padding: 15px;
+      border-radius: 8px;
+      overflow-x: auto;
+    }
+
+    ul {
+      padding-left: 20px;
+    }
+
+    footer {
+      text-align: center;
+      margin-top: 40px;
+      font-size: 0.9em;
+      color: #666;
+    }
+    /* Navbar container */
+    nav {
+      background-color: #1e3a8a; /* dark blue background */
+      padding: 10px 0;           /* vertical padding */
+      position: sticky;          /* stay at top when scrolling */
+      top: 0;                    /* top of the viewport */
+      z-index: 100;              /* keep it above other elements */
+    }
+
+    /* Navbar list styling */
+    .navbar {
+      list-style: none;          /* remove bullets */
+      margin: 0;                 /* remove default margin */
+      padding: 0;                /* remove default padding */
+      display: flex;             /* make items appear in a row */
+      justify-content: center;   /* center them horizontally */
+      gap: 20px;                 /* gap between each nav item */
+    }
+
+    /* Links inside navbar */
+    .navbar a {
+      color: white;              /* white text */
+      text-decoration: none;     /* remove underline */
+      font-weight: 600;          /* semi-bold text */
+      font-size: 1rem;           /* normal readable font size */
+      padding: 6px 10px;         /* some padding inside link */
+      border-radius: 5px;        /* slightly rounded corners */
+      transition: background-color 0.3s ease; /* smooth hover effect */
+    }
+
+    /* Hover and focus effect on links */
+    .navbar a:hover,
+    .navbar a:focus {
+      background-color: #2563eb; /* lighter blue background on hover */
+      outline: none;             /* remove default outline */
+    }
+  </style>
+</head>
+<body>
+  <nav>
+    <ul class="navbar">
+      <li><a href="variables.html">Variables</a></li>
+      <li><a href="datatype.html">Data Types</a></li>
+      <li><a href="operators.html">Operators</a></li>
+      <li><a href="conditionals.html">Conditionals</a></li>
+      <li><a href="loops.html">Loops</a></li>
+      <li><a href="functions.html">Functions</a></li>
+      <li><a href="arrays-objects.html">Arrays & Objects</a></li>
+      <li><a href="string-array-methods.html">String & Array Methods</a></li>
+    </ul>
+  </nav>
+  <header>
+    <h1>JavaScript Conditionals</h1>
+    <p>Make decisions in code using conditional statements</p>
+  </header>
+
+  <section>
+    <h2>1. if Statement</h2>
+    <p>Executes a block of code if a specified condition is true.</p>
+    <pre><code>let age = 18;
+if (age >= 18) {
+  console.log("You are eligible to vote.");
+}</code></pre>
+  </section>
+
+  <section>
+    <h2>2. if...else Statement</h2>
+    <p>Executes one block if true, another if false.</p>
+    <pre><code>let isRaining = true;
+
+if (isRaining) {
+  console.log("Take an umbrella!");
+} else {
+  console.log("Enjoy the sunshine!");
+}</code></pre>
+  </section>
+
+  <section>
+    <h2>3. if...else if...else</h2>
+    <p>Tests multiple conditions in sequence.</p>
+    <pre><code>let score = 75;
+
+if (score >= 90) {
+  console.log("Grade: A");
+} else if (score >= 80) {
+  console.log("Grade: B");
+} else if (score >= 70) {
+  console.log("Grade: C");
+} else {
+  console.log("Grade: D");
+}</code></pre>
+  </section>
+
+  <section>
+    <h2>4. switch Statement</h2>
+    <p>Performs different actions based on different conditions.</p>
+    <pre><code>let day = "Tuesday";
+
+switch (day) {
+  case "Monday":
+    console.log("Start of the week");
+    break;
+  case "Tuesday":
+    console.log("Second day of the week");
+    break;
+  case "Friday":
+    console.log("Almost weekend!");
+    break;
+  default:
+    console.log("Just another day");
+}</code></pre>
+  </section>
+
+  <section>
+    <h2>5. Ternary Operator</h2>
+    <p>Short-hand way to write if...else in one line.</p>
+    <pre><code>let age = 17;
+let result = (age >= 18) ? "Adult" : "Minor";
+console.log(result);</code></pre>
+  </section>
+
+  <footer>
+    &copy; 2025 JavaScript Learning | Made by Mukteswar 🧠
+  </footer>
+
+</body>
+</html>

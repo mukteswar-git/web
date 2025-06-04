@@ -1,0 +1,202 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <title>JavaScript Operators</title>
+  <style>
+    body {
+      font-family: 'Segoe UI', sans-serif;
+      background-color: #f0f4f8;
+      color: #333;
+      margin: 0;
+      padding: 20px;
+    }
+
+    header {
+      text-align: center;
+      margin-bottom: 30px;
+    }
+
+    h1 {
+      color: #1e3a8a;
+    }
+
+    section {
+      background: #fff;
+      padding: 20px;
+      margin-bottom: 20px;
+      border-radius: 10px;
+      box-shadow: 0 4px 10px rgba(0, 0, 0, 0.05);
+    }
+
+    h2 {
+      color: #2563eb;
+    }
+
+    code {
+      background: #e2e8f0;
+      padding: 2px 6px;
+      border-radius: 4px;
+    }
+
+    pre {
+      background: #1e293b;
+      color: #333;
+      padding: 15px;
+      border-radius: 8px;
+      overflow-x: auto;
+    }
+
+    ul {
+      padding-left: 20px;
+    }
+
+    footer {
+      text-align: center;
+      margin-top: 40px;
+      font-size: 0.9em;
+      color: #666;
+    }
+    /* Navbar container */
+    nav {
+      background-color: #1e3a8a; /* dark blue background */
+      padding: 10px 0;           /* vertical padding */
+      position: sticky;          /* stay at top when scrolling */
+      top: 0;                    /* top of the viewport */
+      z-index: 100;              /* keep it above other elements */
+    }
+
+    /* Navbar list styling */
+    .navbar {
+      list-style: none;          /* remove bullets */
+      margin: 0;                 /* remove default margin */
+      padding: 0;                /* remove default padding */
+      display: flex;             /* make items appear in a row */
+      justify-content: center;   /* center them horizontally */
+      gap: 20px;                 /* gap between each nav item */
+    }
+
+    /* Links inside navbar */
+    .navbar a {
+      color: white;              /* white text */
+      text-decoration: none;     /* remove underline */
+      font-weight: 600;          /* semi-bold text */
+      font-size: 1rem;           /* normal readable font size */
+      padding: 6px 10px;         /* some padding inside link */
+      border-radius: 5px;        /* slightly rounded corners */
+      transition: background-color 0.3s ease; /* smooth hover effect */
+    }
+
+    /* Hover and focus effect on links */
+    .navbar a:hover,
+    .navbar a:focus {
+      background-color: #2563eb; /* lighter blue background on hover */
+      outline: none;             /* remove default outline */
+    }
+  </style>
+</head>
+<body>
+  <nav>
+    <ul class="navbar">
+      <li><a href="variables.html">Variables</a></li>
+      <li><a href="datatype.html">Data Types</a></li>
+      <li><a href="operators.html">Operators</a></li>
+      <li><a href="conditionals.html">Conditionals</a></li>
+      <li><a href="loops.html">Loops</a></li>
+      <li><a href="functions.html">Functions</a></li>
+      <li><a href="arrays-objects.html">Arrays & Objects</a></li>
+      <li><a href="string-array-methods.html">String & Array Methods</a></li>
+    </ul>
+  </nav>
+  <header>
+    <h1>JavaScript Operators</h1>
+    <p>Understand the different types of operators used in JavaScript</p>
+  </header>
+
+  <section>
+    <h2>1. Arithmetic Operators</h2>
+    <ul>
+      <li><code>+</code> Addition</li>
+      <li><code>-</code> Subtraction</li>
+      <li><code>*</code> Multiplication</li>
+      <li><code>/</code> Division</li>
+      <li><code>%</code> Modulus (Remainder)</li>
+      <li><code>**</code> Exponentiation</li>
+      <li><code>++</code> Increment</li>
+      <li><code>--</code> Decrement</li>
+    </ul>
+    <pre><code>let x = 10, y = 3;
+console.log(x + y); // 13
+console.log(x % y); // 1
+console.log(x ** y); // 1000</code></pre>
+  </section>
+
+  <section>
+    <h2>2. Assignment Operators</h2>
+    <ul>
+      <li><code>=</code> Assign value</li>
+      <li><code>+=</code> Add and assign</li>
+      <li><code>-=</code> Subtract and assign</li>
+      <li><code>*=</code> Multiply and assign</li>
+      <li><code>/=</code> Divide and assign</li>
+    </ul>
+    <pre><code>let a = 5;
+a += 3;  // a = a + 3
+console.log(a); // 8</code></pre>
+  </section>
+
+  <section>
+    <h2>3. Comparison Operators</h2>
+    <ul>
+      <li><code>==</code> Equal to (loose)</li>
+      <li><code>===</code> Equal to (strict)</li>
+      <li><code>!=</code> Not equal to (loose)</li>
+      <li><code>!==</code> Not equal to (strict)</li>
+      <li><code>&gt;</code> Greater than</li>
+      <li><code>&lt;</code> Less than</li>
+      <li><code>&gt;=</code> Greater than or equal</li>
+      <li><code>&lt;=</code> Less than or equal</li>
+    </ul>
+    <pre><code>console.log(5 == "5");  // true
+console.log(5 === "5"); // false
+console.log(7 > 3);     // true</code></pre>
+  </section>
+
+  <section>
+    <h2>4. Logical Operators</h2>
+    <ul>
+      <li><code>&&</code> Logical AND</li>
+      <li><code>||</code> Logical OR</li>
+      <li><code>!</code> Logical NOT</li>
+    </ul>
+    <pre><code>let isAdult = true;
+let hasID = false;
+
+console.log(isAdult && hasID); // false
+console.log(isAdult || hasID); // true
+console.log(!isAdult);         // false</code></pre>
+  </section>
+
+  <section>
+    <h2>5. String Concatenation Operator</h2>
+    <p>The <code>+</code> operator can also be used to concatenate strings.</p>
+    <pre><code>let firstName = "Mukti";
+let lastName = "Tripathy";
+console.log(firstName + " " + lastName); // Mukti Tripathy</code></pre>
+  </section>
+
+  <section>
+    <h2>6. Ternary Operator</h2>
+    <p>Short form of an <code>if...else</code> condition.</p>
+    <pre><code>let age = 18;
+let status = (age >= 18) ? "Adult" : "Minor";
+console.log(status); // Adult</code></pre>
+  </section>
+
+  <footer>
+    &copy; 2025 JavaScript Learning | Made by Mukteswar ⚙️
+  </footer>
+
+</body>
+</html>
