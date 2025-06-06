@@ -16,4 +16,3 @@
 
 - 🔹 **Calculator**
 - 🔹 **Tip Calculator**
-- 🔹 **Number Guessing Game**

@@ -1,0 +1,171 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <title>DOM Event Listeners Explained</title>
+  <style>
+    body {
+      font-family: 'Segoe UI', sans-serif;
+      background-color: #f9f9f9;
+      margin: 0;
+      padding: 0;
+    }
+
+    header {
+      background-color: #1e3a8a;
+      color: white;
+      padding: 20px;
+      text-align: center;
+    }
+
+    main {
+      padding: 30px;
+    }
+
+    section {
+      background-color: #fff;
+      margin-bottom: 30px;
+      padding: 20px;
+      border-radius: 8px;
+      box-shadow: 0 2px 6px rgba(0,0,0,0.1);
+    }
+
+    h2 {
+      color: #1e3a8a;
+    }
+
+    p.definition {
+      background: #eef6ff;
+      padding: 10px;
+      border-left: 4px solid #1e3a8a;
+      margin-bottom: 15px;
+    }
+
+    .output {
+      margin-top: 10px;
+      padding: 10px;
+      background-color: #eef;
+      border: 1px solid #ccc;
+      border-radius: 5px;
+    }
+
+    button {
+      background-color: #1e3a8a;
+      color: white;
+      border: none;
+      padding: 8px 15px;
+      border-radius: 5px;
+      cursor: pointer;
+      margin-top: 10px;
+    }
+
+    button:hover {
+      background-color: #163076;
+    }
+
+    input, textarea {
+      padding: 5px;
+      margin: 5px 0;
+      width: 100%;
+      box-sizing: border-box;
+    }
+
+    form {
+      max-width: 400px;
+    }
+
+    .box {
+      width: 100px;
+      height: 100px;
+      background-color: #1e3a8a;
+      color: white;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      margin-top: 10px;
+      border-radius: 8px;
+      transition: transform 0.3s;
+    }
+  </style>
+</head>
+<body>
+
+<header>
+  <h1>DOM Event Listeners Tutorial</h1>
+  <p>Learn how to respond to user actions using JavaScript</p>
+</header>
+
+<main>
+
+  <!-- Click Event -->
+  <section>
+    <h2>1️⃣ click Event</h2>
+    <p class="definition">
+      <strong>Definition:</strong> The <code>click</code> event triggers when the user clicks an element like a button or link.
+    </p>
+    <button id="clickBtn">Click Me</button>
+    <div class="output" id="clickOutput"></div>
+  </section>
+
+  <!-- Submit Event -->
+  <section>
+    <h2>2️⃣ submit Event</h2>
+    <p class="definition">
+      <strong>Definition:</strong> The <code>submit</code> event occurs when a form is submitted. It can be used to validate input before actually sending data.
+    </p>
+    <form id="testForm">
+      <label for="username">Username:</label>
+      <input type="text" id="username" required>
+      <button type="submit">Submit</button>
+    </form>
+    <div class="output" id="formOutput"></div>
+  </section>
+
+  <!-- keydown Event -->
+  <section>
+    <h2>3️⃣ keydown Event</h2>
+    <p class="definition">
+      <strong>Definition:</strong> The <code>keydown</code> event fires when a key is pressed. Useful for building games, shortcuts, or live search.
+    </p>
+    <input type="text" id="keyInput" placeholder="Type something...">
+    <div class="output" id="keyOutput"></div>
+  </section>
+
+  <!-- mouseover Event -->
+  <section>
+    <h2>4️⃣ mouseover Event</h2>
+    <p class="definition">
+      <strong>Definition:</strong> The <code>mouseover</code> event occurs when the user hovers the mouse over an element.
+    </p>
+    <div class="box" id="hoverBox">Hover me</div>
+    <div class="output" id="hoverOutput"></div>
+  </section>
+
+</main>
+
+<script>
+  // click
+  document.getElementById("clickBtn").addEventListener("click", () => {
+    document.getElementById("clickOutput").textContent = "✅ Button was clicked!";
+  });
+
+  // submit
+  document.getElementById("testForm").addEventListener("submit", function(e) {
+    e.preventDefault(); // Prevent actual form submission
+    const username = document.getElementById("username").value;
+    document.getElementById("formOutput").textContent = `✅ Form submitted with username: ${username}`;
+  });
+
+  // keydown
+  document.getElementById("keyInput").addEventListener("keydown", function(e) {
+    document.getElementById("keyOutput").textContent = `🔤 You pressed: "${e.key}" (Code: ${e.code})`;
+  });
+
+  // mouseover
+  document.getElementById("hoverBox").addEventListener("mouseover", () => {
+    document.getElementById("hoverOutput").textContent = "🖱️ Mouse is over the box!";
+  });
+</script>
+
+</body>
+</html>

@@ -1,0 +1,151 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <title>JavaScript ES6+ Features</title>
+  <style>
+    body {
+      font-family: Arial, sans-serif;
+      background: #f0f4f8;
+      color: #333;
+      padding: 20px;
+    }
+    h1, h2 {
+      color: #1e3a8a;
+    }
+    section {
+      background: #fff;
+      padding: 15px 20px;
+      margin: 20px 0;
+      border-radius: 8px;
+      box-shadow: 0 2px 5px rgba(0,0,0,0.05);
+    }
+    pre {
+      background: #f9f9f9;
+      padding: 10px;
+      border-left: 4px solid #1e3a8a;
+      border-radius: 5px;
+      overflow-x: auto;
+    }
+    .definition {
+      background: #eaf4ff;
+      padding: 10px;
+      border-left: 4px solid #1e3a8a;
+      margin-bottom: 15px;
+    }
+  </style>
+</head>
+<body>
+
+  <h1>🚀 ES6+ JavaScript Features</h1>
+
+  <section>
+    <h2>1. let & const</h2>
+    <p class="definition"><strong>let</strong> and <strong>const</strong> are block-scoped variables. <code>const</code> cannot be reassigned.</p>
+    <pre><code>
+let name = "Jack";
+name = "Mukti"; // ✅
+
+const age = 23;
+// age = 24; ❌ Error
+    </code></pre>
+  </section>
+
+  <section>
+    <h2>2. Arrow Functions</h2>
+    <p class="definition">Arrow functions provide a shorter syntax for writing functions. They also don't have their own <code>this</code>.</p>
+    <pre><code>
+// Regular function
+function add(a, b) {
+  return a + b;
+}
+
+// Arrow function
+const addArrow = (a, b) => a + b;
+
+console.log(addArrow(5, 3)); // 8
+    </code></pre>
+  </section>
+
+  <section>
+    <h2>3. Template Literals</h2>
+    <p class="definition">Template literals use backticks (<code>`</code>) and allow embedding expressions using <code>${...}</code>.</p>
+    <pre><code>
+const name = "Mukti";
+const age = 23;
+console.log(`My name is ${name} and I'm ${age} years old.`);
+// Output: My name is Mukti and I'm 23 years old.
+    </code></pre>
+  </section>
+
+  <section>
+    <h2>4. Destructuring</h2>
+    <p class="definition">Destructuring allows unpacking values from arrays or objects into separate variables.</p>
+    <pre><code>
+// Array destructuring
+const numbers = [1, 2, 3];
+const [first, second] = numbers;
+console.log(first, second); // 1 2
+
+// Object destructuring
+const user = { name: "Jack", age: 20 };
+const { name, age } = user;
+console.log(name, age); // Jack 20
+    </code></pre>
+  </section>
+
+  <section>
+    <h2>5. Spread Operator</h2>
+    <p class="definition">The spread operator (<code>...</code>) expands elements of an iterable (like arrays or objects).</p>
+    <pre><code>
+const arr1 = [1, 2];
+const arr2 = [...arr1, 3, 4];
+console.log(arr2); // [1, 2, 3, 4]
+
+const obj1 = { a: 1 };
+const obj2 = { ...obj1, b: 2 };
+console.log(obj2); // { a: 1, b: 2 }
+    </code></pre>
+  </section>
+
+  <section>
+    <h2>6. Rest Operator</h2>
+    <p class="definition">The rest operator (<code>...</code>) collects multiple elements into one variable.</p>
+    <pre><code>
+function sum(...nums) {
+  return nums.reduce((acc, val) => acc + val, 0);
+}
+
+console.log(sum(1, 2, 3, 4)); // 10
+    </code></pre>
+  </section>
+
+  <section>
+    <h2>7. Default Parameters</h2>
+    <p class="definition">You can set default values for function parameters.</p>
+    <pre><code>
+function greet(name = "Guest") {
+  console.log(`Hello, ${name}`);
+}
+
+greet();         // Hello, Guest
+greet("Mukti");  // Hello, Mukti
+    </code></pre>
+  </section>
+
+  <section>
+    <h2>📘 Summary</h2>
+    <ul>
+      <li><code>let</code> and <code>const</code>: Modern variable declarations</li>
+      <li>Arrow Functions: Short syntax, no own <code>this</code></li>
+      <li>Template Literals: Embed variables in strings</li>
+      <li>Destructuring: Unpack values from arrays/objects</li>
+      <li>Spread: Expand elements</li>
+      <li>Rest: Collect elements</li>
+      <li>Default Params: Fallback values in functions</li>
+    </ul>
+  </section>
+
+</body>
+</html>

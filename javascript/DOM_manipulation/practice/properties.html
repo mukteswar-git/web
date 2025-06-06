@@ -1,0 +1,140 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <title>DOM Properties Explained</title>
+  <style>
+    body {
+      font-family: 'Segoe UI', sans-serif;
+      background-color: #f9f9f9;
+      margin: 0;
+      padding: 0;
+    }
+
+    header {
+      background-color: #1e3a8a;
+      color: white;
+      padding: 20px;
+      text-align: center;
+    }
+
+    main {
+      padding: 30px;
+    }
+
+    section {
+      background-color: #fff;
+      padding: 20px;
+      margin-bottom: 30px;
+      border-radius: 8px;
+      box-shadow: 0 2px 6px rgba(0,0,0,0.1);
+    }
+
+    h2 {
+      color: #1e3a8a;
+    }
+
+    p.definition {
+      background: #eef6ff;
+      padding: 10px;
+      border-left: 4px solid #1e3a8a;
+      margin-bottom: 15px;
+    }
+
+    button {
+      background-color: #1e3a8a;
+      color: white;
+      border: none;
+      padding: 8px 15px;
+      border-radius: 5px;
+      cursor: pointer;
+      margin-top: 10px;
+    }
+
+    button:hover {
+      background-color: #163076;
+    }
+
+    .output {
+      margin-top: 10px;
+      padding: 10px;
+      background-color: #eef;
+      border: 1px solid #ccc;
+      border-radius: 5px;
+      white-space: pre-line;
+    }
+
+    .hidden {
+      display: none;
+    }
+  </style>
+</head>
+<body>
+
+<header>
+  <h1>DOM Properties Tutorial</h1>
+  <p>Understand <strong>innerText</strong>, <strong>textContent</strong>, and <strong>innerHTML</strong> with examples</p>
+</header>
+
+<main>
+
+  <!-- innerText Section -->
+  <section>
+    <h2>1️⃣ innerText</h2>
+    <p class="definition">
+      <strong>Definition:</strong> <code>innerText</code> returns only the <strong>visible</strong> text inside an element, ignoring any hidden elements and respecting CSS styles like <code>display: none</code>.
+    </p>
+    <div id="innerTextExample">
+      Hello <span style="display: none;">Hidden World</span>
+    </div>
+    <button onclick="showInnerText()">Show innerText</button>
+    <div class="output" id="output1"></div>
+  </section>
+
+  <!-- textContent Section -->
+  <section>
+    <h2>2️⃣ textContent</h2>
+    <p class="definition">
+      <strong>Definition:</strong> <code>textContent</code> returns <strong>all text</strong> inside an element, including text from elements that are hidden using CSS.
+    </p>
+    <div id="textContentExample">
+      Hello <span style="display: none;">Hidden World</span>
+    </div>
+    <button onclick="showTextContent()">Show textContent</button>
+    <div class="output" id="output2"></div>
+  </section>
+
+  <!-- innerHTML Section -->
+  <section>
+    <h2>3️⃣ innerHTML</h2>
+    <p class="definition">
+      <strong>Definition:</strong> <code>innerHTML</code> returns the <strong>HTML markup</strong> (tags and content) inside an element, not just the text.
+    </p>
+    <div id="htmlExample">
+      <strong>This is bold</strong> and <em>this is italic</em>
+    </div>
+    <button onclick="showInnerHTML()">Show innerHTML</button>
+    <div class="output" id="output3"></div>
+  </section>
+
+</main>
+
+<script>
+  function showInnerText() {
+    const el = document.getElementById("innerTextExample");
+    document.getElementById("output1").textContent = "innerText Output:\n" + el.innerText;
+  }
+
+  function showTextContent() {
+    const el = document.getElementById("textContentExample");
+    document.getElementById("output2").textContent = "textContent Output:\n" + el.textContent;
+  }
+
+  function showInnerHTML() {
+    const el = document.getElementById("htmlExample");
+    document.getElementById("output3").textContent = "innerHTML Output:\n" + el.innerHTML;
+  }
+</script>
+
+</body>
+</html>

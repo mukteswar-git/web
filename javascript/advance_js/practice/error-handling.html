@@ -1,0 +1,136 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <title>JavaScript Error Handling</title>
+  <style>
+    body {
+      font-family: Arial, sans-serif;
+      background: #f0f4f8;
+      color: #333;
+      padding: 20px;
+    }
+    h1, h2 {
+      color: #c0392b;
+    }
+    section {
+      background: #fff;
+      padding: 15px 20px;
+      margin: 20px 0;
+      border-radius: 8px;
+      box-shadow: 0 2px 5px rgba(0,0,0,0.05);
+    }
+    pre {
+      background: #f9f9f9;
+      padding: 10px;
+      border-left: 4px solid #c0392b;
+      border-radius: 5px;
+      overflow-x: auto;
+    }
+    .definition {
+      background: #fceeee;
+      padding: 10px;
+      border-left: 4px solid #c0392b;
+      margin-bottom: 15px;
+    }
+  </style>
+</head>
+<body>
+
+  <h1>🛑 JavaScript Error Handling</h1>
+
+  <section>
+    <h2>📌 What is Error Handling?</h2>
+    <p class="definition">
+      <strong>Definition:</strong> Error handling is a way to catch and respond to errors without crashing your application. JavaScript uses the <code>try...catch</code> syntax to catch exceptions.
+    </p>
+  </section>
+
+  <section>
+    <h2>🧪 Basic try...catch</h2>
+    <p>If an error occurs inside the <code>try</code> block, control is passed to the <code>catch</code> block.</p>
+    <pre><code>
+try {
+  let num = 10;
+  console.log(num.toUpperCase()); // ❌ Error: toUpperCase is not a function
+} catch (err) {
+  console.log("⚠️ Error caught:", err.message);
+}
+
+// Output:
+// ⚠️ Error caught: num.toUpperCase is not a function
+    </code></pre>
+  </section>
+
+  <section>
+    <h2>📦 throw and custom errors</h2>
+    <p>You can create and throw your own errors using <code>throw</code>.</p>
+    <pre><code>
+function divide(a, b) {
+  if (b === 0) {
+    throw new Error("Division by zero is not allowed");
+  }
+  return a / b;
+}
+
+try {
+  console.log(divide(10, 0));
+} catch (e) {
+  console.log("⚠️ Custom Error:", e.message);
+}
+    </code></pre>
+  </section>
+
+  <section>
+    <h2>✅ finally block</h2>
+    <p><code>finally</code> will always run whether or not an error occurred — great for cleanup.</p>
+    <pre><code>
+try {
+  console.log("Trying something risky...");
+  throw new Error("Oops");
+} catch (err) {
+  console.log("Caught:", err.message);
+} finally {
+  console.log("Cleanup: This always runs.");
+}
+
+// Output:
+// Trying something risky...
+// Caught: Oops
+// Cleanup: This always runs.
+    </code></pre>
+  </section>
+
+  <section>
+    <h2>🧠 Real-World Example</h2>
+    <pre><code>
+function fetchUserData(userId) {
+  try {
+    if (!userId) throw new Error("User ID is required");
+    console.log(`Fetching data for user ${userId}...`);
+    // Imagine fetching from an API
+  } catch (err) {
+    console.log("❌ Failed to fetch user:", err.message);
+  } finally {
+    console.log("📡 Request ended.");
+  }
+}
+
+fetchUserData();  // No ID passed
+fetchUserData(101);
+    </code></pre>
+  </section>
+
+  <section>
+    <h2>📘 Summary</h2>
+    <ul>
+      <li><code>try...catch</code> handles runtime errors.</li>
+      <li><code>throw</code> is used to trigger custom errors.</li>
+      <li><code>finally</code> always runs for cleanup.</li>
+      <li>Error handling makes your code safer and more user-friendly.</li>
+    </ul>
+  </section>
+
+</body>
+</html>

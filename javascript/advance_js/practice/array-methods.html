@@ -1,0 +1,87 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <title>JavaScript Array Methods</title>
+  <style>
+    body {
+      font-family: Arial, sans-serif;
+      padding: 20px;
+      background: #f4f4f4;
+      color: #333;
+    }
+    h1 {
+      color: #1e3a8a;
+    }
+    section {
+      margin-bottom: 30px;
+      background: #fff;
+      padding: 15px;
+      border-radius: 10px;
+      box-shadow: 0 0 10px rgba(0,0,0,0.05);
+    }
+    pre {
+      background: #eee;
+      padding: 10px;
+      border-radius: 5px;
+      overflow-x: auto;
+    }
+  </style>
+</head>
+<body>
+
+  <h1>🧠 JavaScript Array Methods</h1>
+
+  <section>
+    <h2>🔁 forEach()</h2>
+    <p><strong>Definition:</strong> Executes a function for each element in the array. It does not return a new array.</p>
+    <p><strong>Example:</strong></p>
+    <pre><code>
+const fruits = ["apple", "banana", "cherry"];
+
+fruits.forEach(function(fruit) {
+  console.log(fruit);
+});
+// Output:
+// apple
+// banana
+// cherry
+    </code></pre>
+  </section>
+
+  <section>
+    <h2>🔄 map()</h2>
+    <p><strong>Definition:</strong> Creates a new array by applying a function to each element of the original array.</p>
+    <p><strong>Example:</strong></p>
+    <pre><code>
+const numbers = [1, 2, 3, 4];
+const doubled = numbers.map(num => num * 2);
+console.log(doubled); // [2, 4, 6, 8]
+    </code></pre>
+  </section>
+
+  <section>
+    <h2>🧹 filter()</h2>
+    <p><strong>Definition:</strong> Creates a new array with only the elements that pass a certain condition.</p>
+    <p><strong>Example:</strong></p>
+    <pre><code>
+const ages = [15, 22, 30, 17];
+const adults = ages.filter(age => age >= 18);
+console.log(adults); // [22, 30]
+    </code></pre>
+  </section>
+
+  <section>
+    <h2>➕ reduce()</h2>
+    <p><strong>Definition:</strong> Reduces the array to a single value by applying a function to each item (e.g., sum or multiply).</p>
+    <p><strong>Example:</strong></p>
+    <pre><code>
+const prices = [10, 20, 30];
+const total = prices.reduce((sum, price) => sum + price, 0);
+console.log(total); // 60
+    </code></pre>
+  </section>
+
+</body>
+</html>

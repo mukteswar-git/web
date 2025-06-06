@@ -1,0 +1,148 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <title>Create & Remove Elements Dynamically</title>
+  <style>
+    body {
+      font-family: 'Segoe UI', sans-serif;
+      background-color: #f2f2f2;
+      padding: 0;
+      margin: 0;
+    }
+
+    header {
+      background-color: #1e3a8a;
+      color: white;
+      text-align: center;
+      padding: 20px;
+    }
+
+    main {
+      padding: 30px;
+      max-width: 700px;
+      margin: auto;
+    }
+
+    section {
+      background: white;
+      padding: 25px;
+      border-radius: 10px;
+      margin-bottom: 30px;
+      box-shadow: 0 4px 10px rgba(0,0,0,0.1);
+    }
+
+    h2 {
+      color: #1e3a8a;
+    }
+
+    p.definition {
+      background: #eef6ff;
+      padding: 10px;
+      border-left: 4px solid #1e3a8a;
+      margin-bottom: 15px;
+    }
+
+    button {
+      background-color: #1e3a8a;
+      color: white;
+      border: none;
+      padding: 10px 15px;
+      border-radius: 6px;
+      cursor: pointer;
+      margin-right: 10px;
+      margin-top: 10px;
+    }
+
+    button:hover {
+      background-color: #163076;
+    }
+
+    ul#itemList {
+      list-style-type: disc;
+      margin-top: 15px;
+      padding-left: 20px;
+    }
+
+    ul#itemList li {
+      background-color: #f0f8ff;
+      padding: 10px;
+      margin-bottom: 5px;
+      border-radius: 5px;
+      position: relative;
+    }
+
+    ul#itemList li button {
+      position: absolute;
+      right: 10px;
+      top: 10px;
+      background-color: crimson;
+    }
+
+    ul#itemList li button:hover {
+      background-color: darkred;
+    }
+  </style>
+</head>
+<body>
+
+<header>
+  <h1>Dynamic Element Creation & Deletion</h1>
+  <p>Learn how to manipulate the DOM with JavaScript</p>
+</header>
+
+<main>
+
+  <section>
+    <h2>📚 Definitions</h2>
+    <p class="definition">
+      <strong><code>createElement(tagName)</code>:</strong> Creates a new element node with the given tag (like "div", "li", "p", etc.).
+    </p>
+    <p class="definition">
+      <strong><code>appendChild(node)</code>:</strong> Adds the created element as a child to a parent element in the DOM.
+    </p>
+    <p class="definition">
+      <strong><code>remove()</code>:</strong> Directly removes the element from the DOM.
+    </p>
+  </section>
+
+  <section>
+    <h2>⚙️ Example: To-Do List</h2>
+    <input type="text" id="itemInput" placeholder="Enter an item" />
+    <button onclick="addItem()">➕ Add Item</button>
+    <ul id="itemList"></ul>
+  </section>
+
+</main>
+
+<script>
+  function addItem() {
+    const input = document.getElementById("itemInput");
+    const value = input.value.trim();
+
+    if (value === "") return;
+
+    // Create new <li>
+    const li = document.createElement("li");
+    li.textContent = value;
+
+    // Create a delete button
+    const delBtn = document.createElement("button");
+    delBtn.textContent = "❌";
+    delBtn.onclick = function () {
+      li.remove(); // remove the <li> when button is clicked
+    };
+
+    // Add delete button to li
+    li.appendChild(delBtn);
+
+    // Add li to ul
+    document.getElementById("itemList").appendChild(li);
+
+    // Clear input
+    input.value = "";
+  }
+</script>
+
+</body>
+</html>

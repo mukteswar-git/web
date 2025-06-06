@@ -1,0 +1,181 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <title>DOM Selectors Explained</title>
+  <style>
+    body {
+      font-family: 'Segoe UI', sans-serif;
+      background-color: #f9f9f9;
+      margin: 0;
+      padding: 0;
+    }
+
+    header {
+      background-color: #1e3a8a;
+      color: white;
+      padding: 20px;
+      text-align: center;
+    }
+
+    main {
+      padding: 30px;
+    }
+
+    section {
+      background-color: white;
+      margin-bottom: 30px;
+      padding: 20px;
+      border-radius: 8px;
+      box-shadow: 0 2px 5px rgba(0,0,0,0.1);
+    }
+
+    h2 {
+      color: #1e3a8a;
+    }
+
+    p.definition {
+      background: #eef6ff;
+      padding: 10px;
+      border-left: 4px solid #1e3a8a;
+      margin-bottom: 15px;
+    }
+
+    button {
+      background-color: #1e3a8a;
+      color: white;
+      border: none;
+      padding: 8px 15px;
+      border-radius: 5px;
+      cursor: pointer;
+      margin-top: 10px;
+    }
+
+    button:hover {
+      background-color: #163076;
+    }
+
+    .output {
+      margin-top: 10px;
+      padding: 10px;
+      background-color: #eef;
+      border: 1px solid #ccc;
+      border-radius: 5px;
+    }
+  </style>
+</head>
+<body>
+
+<header>
+  <h1>DOM Selectors Tutorial</h1>
+  <p>Learn how to select and manipulate HTML elements using JavaScript</p>
+</header>
+
+<main>
+
+  <!-- getElementById -->
+  <section>
+    <h2>1️⃣ getElementById()</h2>
+    <p class="definition">
+      <strong>Definition:</strong> <code>getElementById()</code> returns the element that has the specified <code>id</code>. It is one of the fastest and most specific ways to select an element.
+    </p>
+    <p id="demo-id">Original Text (ID: demo-id)</p>
+    <button onclick="selectById()">Change Text</button>
+    <div class="output" id="output1"></div>
+  </section>
+
+  <!-- getElementsByClassName -->
+  <section>
+    <h2>2️⃣ getElementsByClassName()</h2>
+    <p class="definition">
+      <strong>Definition:</strong> <code>getElementsByClassName()</code> returns a live HTMLCollection of all elements that have the specified class name. You can loop through it like an array.
+    </p>
+    <p class="demo-class">First paragraph with class</p>
+    <p class="demo-class">Second paragraph with class</p>
+    <button onclick="selectByClass()">Style Class Elements</button>
+    <div class="output" id="output2"></div>
+  </section>
+
+  <!-- getElementsByTagName -->
+  <section>
+    <h2>3️⃣ getElementsByTagName()</h2>
+    <p class="definition">
+      <strong>Definition:</strong> <code>getElementsByTagName()</code> returns a live HTMLCollection of all elements with the given tag name (like <code>'p'</code> or <code>'li'</code>).
+    </p>
+    <ul>
+      <li>Tag Item 1</li>
+      <li>Tag Item 2</li>
+      <li>Tag Item 3</li>
+    </ul>
+    <button onclick="selectByTag()">Highlight List Items</button>
+    <div class="output" id="output3"></div>
+  </section>
+
+  <!-- querySelector -->
+  <section>
+    <h2>4️⃣ querySelector()</h2>
+    <p class="definition">
+      <strong>Definition:</strong> <code>querySelector()</code> returns the <strong>first element</strong> that matches a CSS selector. Useful for quick access when you expect only one match.
+    </p>
+    <p class="selector">I'm the first element with class "selector"</p>
+    <p class="selector">I'm the second element with class "selector"</p>
+    <button onclick="selectQuery()">Style First Selector</button>
+    <div class="output" id="output4"></div>
+  </section>
+
+  <!-- querySelectorAll -->
+  <section>
+    <h2>5️⃣ querySelectorAll()</h2>
+    <p class="definition">
+      <strong>Definition:</strong> <code>querySelectorAll()</code> returns a static NodeList of <strong>all elements</strong> that match the CSS selector. You can loop over it using <code>forEach</code>.
+    </p>
+    <div class="boxes">
+      <div class="box">Box A</div>
+      <div class="box">Box B</div>
+      <div class="box">Box C</div>
+    </div>
+    <button onclick="selectQueryAll()">Number the Boxes</button>
+    <div class="output" id="output5"></div>
+  </section>
+
+</main>
+
+<script>
+  function selectById() {
+    const element = document.getElementById("demo-id");
+    element.textContent = "Text changed using getElementById!";
+    document.getElementById("output1").textContent = "✅ Text was changed.";
+  }
+
+  function selectByClass() {
+    const items = document.getElementsByClassName("demo-class");
+    items[0].style.color = "red";
+    items[1].style.fontWeight = "bold";
+    document.getElementById("output2").textContent = "✅ Styled two elements with the same class.";
+  }
+
+  function selectByTag() {
+    const tags = document.getElementsByTagName("li");
+    for (let i = 0; i < tags.length; i++) {
+      tags[i].style.backgroundColor = "#d1ffd1";
+    }
+    document.getElementById("output3").textContent = "✅ Highlighted all <li> tags.";
+  }
+
+  function selectQuery() {
+    const first = document.querySelector(".selector");
+    first.style.border = "2px solid orange";
+    document.getElementById("output4").textContent = "✅ First '.selector' element was styled.";
+  }
+
+  function selectQueryAll() {
+    const all = document.querySelectorAll(".box");
+    all.forEach((el, index) => {
+      el.textContent += ` (${index + 1})`;
+    });
+    document.getElementById("output5").textContent = "✅ Numbered all '.box' elements.";
+  }
+</script>
+
+</body>
+</html>

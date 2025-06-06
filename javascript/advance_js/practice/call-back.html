@@ -1,0 +1,136 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <title>JavaScript Callback Functions</title>
+  <style>
+    body {
+      font-family: Arial, sans-serif;
+      background: #f0f4f8;
+      padding: 20px;
+      color: #333;
+    }
+    h1, h2 {
+      color: #1e3a8a;
+    }
+    section {
+      background: white;
+      padding: 15px 20px;
+      margin: 20px 0;
+      border-radius: 8px;
+      box-shadow: 0 2px 5px rgba(0,0,0,0.1);
+    }
+    pre {
+      background: #eee;
+      padding: 10px;
+      border-radius: 5px;
+      overflow-x: auto;
+    }
+    .definition {
+      background: #eaf4ff;
+      padding: 10px;
+      border-left: 4px solid #1e3a8a;
+      margin-bottom: 15px;
+    }
+  </style>
+</head>
+<body>
+
+  <h1>🔁 JavaScript Callback Functions</h1>
+
+  <section>
+    <h2>📌 What is a Callback Function?</h2>
+    <p class="definition">
+      <strong>Definition:</strong> A callback function is a function passed as an argument to another function, which is then invoked inside the outer function to complete an action or routine.
+    </p>
+    <p><strong>Why use callbacks?</strong></p>
+    <ul>
+      <li>To make code modular and reusable</li>
+      <li>To run code after a task completes (especially with asynchronous code)</li>
+    </ul>
+  </section>
+
+  <section>
+    <h2>🧪 Basic Example</h2>
+    <pre><code>
+function greet(name, callback) {
+  console.log("Hi " + name);
+  callback();
+}
+
+function sayBye() {
+  console.log("Bye!");
+}
+
+greet("Jack", sayBye);
+
+// Output:
+// Hi Jack
+// Bye!
+    </code></pre>
+  </section>
+
+  <section>
+    <h2>🔄 Anonymous Callback</h2>
+    <p>You can also pass an anonymous function:</p>
+    <pre><code>
+greet("Mukti", function() {
+  console.log("Take care!");
+});
+
+// Output:
+// Hi Mukti
+// Take care!
+    </code></pre>
+  </section>
+
+  <section>
+    <h2>⏱️ Asynchronous Callback Example</h2>
+    <p>In real apps, callbacks are often used with asynchronous code like <code>setTimeout</code>, <code>fetch</code>, etc.</p>
+    <pre><code>
+console.log("Start");
+
+setTimeout(function() {
+  console.log("This runs after 2 seconds");
+}, 2000);
+
+console.log("End");
+
+// Output:
+// Start
+// End
+// This runs after 2 seconds
+    </code></pre>
+  </section>
+
+  <section>
+    <h2>📦 Real-World Use Case</h2>
+    <p>Suppose you're fetching user data from an API and want to display it only after the data is loaded:</p>
+    <pre><code>
+function fetchData(callback) {
+  setTimeout(() => {
+    console.log("Data fetched");
+    callback();
+  }, 1000);
+}
+
+function showData() {
+  console.log("Now displaying data...");
+}
+
+fetchData(showData);
+    </code></pre>
+  </section>
+
+  <section>
+    <h2>📘 Summary</h2>
+    <ul>
+      <li>A callback is a function passed into another function.</li>
+      <li>Used to run code after a task completes.</li>
+      <li>Common in async operations like API calls, event handling, and timers.</li>
+    </ul>
+  </section>
+
+</body>
+</html>

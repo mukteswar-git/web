@@ -1,0 +1,108 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <title>JavaScript Hoisting Explained</title>
+  <style>
+    body {
+      font-family: Arial, sans-serif;
+      background: #f0f4f8;
+      color: #333;
+      padding: 20px;
+    }
+    h1, h2 {
+      color: #1e3a8a;
+    }
+    section {
+      background: white;
+      padding: 15px 20px;
+      margin: 20px 0;
+      border-radius: 8px;
+      box-shadow: 0 2px 5px rgba(0,0,0,0.05);
+    }
+    pre {
+      background: #eee;
+      padding: 10px;
+      border-radius: 5px;
+      overflow-x: auto;
+    }
+    .definition {
+      background: #eaf4ff;
+      padding: 10px;
+      border-left: 4px solid #1e3a8a;
+      margin-bottom: 15px;
+    }
+  </style>
+</head>
+<body>
+
+  <h1>🔄 JavaScript Hoisting</h1>
+
+  <section>
+    <h2>📌 What is Hoisting?</h2>
+    <p class="definition">
+      <strong>Definition:</strong> Hoisting is JavaScript's default behavior of moving <strong>declarations</strong> to the top of the current scope (function or global).
+      Only declarations are hoisted, not initializations.
+    </p>
+    <p>Let's see this in action 👇</p>
+    <pre><code>
+console.log(a); // undefined
+var a = 5;
+    </code></pre>
+    <p><strong>Why?</strong> Because behind the scenes, JS rewrites it like this:</p>
+    <pre><code>
+var a;
+console.log(a); // undefined
+a = 5;
+    </code></pre>
+  </section>
+
+  <section>
+    <h2>📦 var vs let/const</h2>
+    <p><code>var</code> is hoisted and initialized as <code>undefined</code>, but <code>let</code> and <code>const</code> are hoisted differently.</p>
+    <pre><code>
+console.log(x);  // ❌ ReferenceError
+let x = 10;
+    </code></pre>
+    <p><strong>Why?</strong> Because <code>let</code> and <code>const</code> are hoisted but stay in the "Temporal Dead Zone" (TDZ) until they are declared.</p>
+  </section>
+
+  <section>
+    <h2>🧠 Function Hoisting</h2>
+    <p><strong>Function Declarations</strong> are hoisted completely (name + body), so you can call them before they're declared.</p>
+    <pre><code>
+sayHello(); // ✅ Works
+
+function sayHello() {
+  console.log("Hello!");
+}
+    </code></pre>
+
+    <p><strong>Function Expressions</strong> (especially with <code>const</code> or <code>let</code>) are <em>not</em> hoisted:</p>
+    <pre><code>
+sayHi(); // ❌ TypeError
+
+const sayHi = function() {
+  console.log("Hi!");
+};
+    </code></pre>
+  </section>
+
+  <section>
+    <h2>✅ Summary</h2>
+    <ul>
+      <li><strong>var</strong>: Hoisted & initialized as <code>undefined</code></li>
+      <li><strong>let / const</strong>: Hoisted but not initialized — stay in TDZ</li>
+      <li><strong>Function declarations</strong>: Fully hoisted</li>
+      <li><strong>Function expressions</strong>: Not hoisted</li>
+    </ul>
+  </section>
+
+  <section>
+    <h2>🧪 Try It Yourself</h2>
+    <p>Open DevTools (F12) > Console and experiment with the examples above. Try calling a function or accessing a variable before it's defined!</p>
+  </section>
+
+</body>
+</html>

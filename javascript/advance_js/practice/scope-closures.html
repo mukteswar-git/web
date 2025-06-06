@@ -1,0 +1,122 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <title>JavaScript Scope & Closures</title>
+  <style>
+    body {
+      font-family: Arial, sans-serif;
+      background: #f4f4f4;
+      padding: 20px;
+      color: #333;
+    }
+    h1, h2 {
+      color: #1e3a8a;
+    }
+    section {
+      background: #fff;
+      padding: 15px 20px;
+      margin-bottom: 20px;
+      border-radius: 8px;
+      box-shadow: 0 2px 5px rgba(0,0,0,0.1);
+    }
+    pre {
+      background: #eee;
+      padding: 10px;
+      border-radius: 5px;
+      overflow-x: auto;
+    }
+    .definition {
+      background: #eef6ff;
+      padding: 10px;
+      border-left: 4px solid #1e3a8a;
+      margin-bottom: 15px;
+    }
+  </style>
+</head>
+<body>
+
+  <h1>🧠 JavaScript Scope & Closures</h1>
+
+  <!-- Scope -->
+  <section>
+    <h2>📦 What is Scope?</h2>
+    <p class="definition"><strong>Definition:</strong> Scope determines where variables and functions can be accessed in your code. JavaScript has three main types of scope:</p>
+    <ul>
+      <li><strong>Global Scope:</strong> Variables accessible from anywhere.</li>
+      <li><strong>Function Scope:</strong> Variables declared inside a function.</li>
+      <li><strong>Block Scope:</strong> Variables inside <code>{ }</code> using <code>let</code> or <code>const</code>.</li>
+    </ul>
+    <pre><code>
+// Global Scope
+let globalVar = "I am global";
+
+function testScope() {
+  let functionVar = "I am inside a function";
+  console.log(globalVar);       // ✅ Works
+  console.log(functionVar);     // ✅ Works
+}
+
+testScope();
+console.log(globalVar);         // ✅ Works
+// console.log(functionVar);    ❌ Error: Not defined outside
+    </code></pre>
+  </section>
+
+  <!-- Closure -->
+  <section>
+    <h2>🔒 What is a Closure?</h2>
+    <p class="definition"><strong>Definition:</strong> A closure is a function that "remembers" variables from its outer (lexical) scope, even after the outer function has finished running.</p>
+    <p>This is possible because functions in JavaScript form closures automatically when defined inside another function.</p>
+    <pre><code>
+function outerFunction() {
+  let counter = 0;
+
+  function innerFunction() {
+    counter++;
+    console.log("Counter:", counter);
+  }
+
+  return innerFunction;
+}
+
+const myCounter = outerFunction(); // Returns inner function with closure
+myCounter(); // Counter: 1
+myCounter(); // Counter: 2
+    </code></pre>
+    <p><strong>Why it works:</strong> Even though <code>outerFunction()</code> is done executing, the inner function still remembers the <code>counter</code> variable.</p>
+  </section>
+
+  <section>
+    <h2>🔧 Real-World Example of Closure</h2>
+    <pre><code>
+// Use case: private variable
+function createUser(name) {
+  let score = 0;
+
+  return {
+    getName: () => name,
+    increaseScore: () => { score++; },
+    getScore: () => score
+  };
+}
+
+const user = createUser("Jack");
+
+console.log(user.getName());   // "Jack"
+console.log(user.getScore());  // 0
+user.increaseScore();
+user.increaseScore();
+console.log(user.getScore());  // 2
+    </code></pre>
+    <p>This pattern is often used to create private variables in JavaScript (since <code>score</code> is not accessible directly).</p>
+  </section>
+
+  <section>
+    <h2>🧪 Try It Yourself</h2>
+    <p>Open your browser console and test different scopes and closures using <code>function</code>, <code>let</code>, and <code>const</code>. Try writing a counter, or a form with a memory of previous values.</p>
+  </section>
+
+</body>
+</html>

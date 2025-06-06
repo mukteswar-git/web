@@ -1,0 +1,168 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <title>Form Validation with JavaScript</title>
+  <style>
+    body {
+      font-family: 'Segoe UI', sans-serif;
+      background-color: #f2f2f2;
+      padding: 0;
+      margin: 0;
+    }
+
+    header {
+      background-color: #1e3a8a;
+      color: white;
+      padding: 20px;
+      text-align: center;
+    }
+
+    main {
+      padding: 30px;
+    }
+
+    section {
+      background: white;
+      padding: 25px;
+      border-radius: 10px;
+      max-width: 500px;
+      margin: auto;
+      box-shadow: 0 4px 10px rgba(0,0,0,0.1);
+    }
+
+    h2 {
+      color: #1e3a8a;
+    }
+
+    p.definition {
+      background: #eef6ff;
+      padding: 10px;
+      border-left: 4px solid #1e3a8a;
+    }
+
+    form {
+      margin-top: 20px;
+    }
+
+    input {
+      display: block;
+      width: 100%;
+      padding: 10px;
+      margin-top: 10px;
+      margin-bottom: 5px;
+      border: 1px solid #ccc;
+      border-radius: 5px;
+    }
+
+    .error {
+      color: red;
+      font-size: 14px;
+      margin-bottom: 10px;
+    }
+
+    .success {
+      background-color: #e6ffe6;
+      padding: 10px;
+      color: green;
+      border: 1px solid #aaffaa;
+      margin-top: 15px;
+      border-radius: 5px;
+    }
+
+    button {
+      background-color: #1e3a8a;
+      color: white;
+      padding: 10px 15px;
+      border: none;
+      border-radius: 5px;
+      cursor: pointer;
+      margin-top: 10px;
+    }
+
+    button:hover {
+      background-color: #163076;
+    }
+  </style>
+</head>
+<body>
+
+<header>
+  <h1>JavaScript Form Validation</h1>
+  <p>Client-side form validation using DOM + JS</p>
+</header>
+
+<main>
+  <section>
+    <h2>📝 What is Form Validation?</h2>
+    <p class="definition">
+      <strong>Definition:</strong> Form validation is the process of checking the input data before it is sent to the server. JavaScript can validate data like empty fields, email formats, password rules, and more — all without reloading the page.
+    </p>
+
+    <form id="signupForm" novalidate>
+      <label for="name">Full Name</label>
+      <input type="text" id="name" placeholder="Enter your name">
+      <div class="error" id="nameError"></div>
+
+      <label for="email">Email Address</label>
+      <input type="email" id="email" placeholder="Enter a valid email">
+      <div class="error" id="emailError"></div>
+
+      <label for="password">Password</label>
+      <input type="password" id="password" placeholder="Minimum 6 characters">
+      <div class="error" id="passwordError"></div>
+
+      <button type="submit">Submit</button>
+      <div class="success" id="successMsg" style="display: none;"></div>
+    </form>
+  </section>
+</main>
+
+<script>
+  document.getElementById("signupForm").addEventListener("submit", function(e) {
+    e.preventDefault();
+
+    // Reset errors and success
+    let valid = true;
+    document.getElementById("nameError").textContent = "";
+    document.getElementById("emailError").textContent = "";
+    document.getElementById("passwordError").textContent = "";
+    document.getElementById("successMsg").style.display = "none";
+
+    // Get values
+    const name = document.getElementById("name").value.trim();
+    const email = document.getElementById("email").value.trim();
+    const password = document.getElementById("password").value;
+
+    // Name validation
+    if (name === "") {
+      document.getElementById("nameError").textContent = "⚠️ Name is required.";
+      valid = false;
+    }
+
+    // Email validation
+    const emailRegex = /^[^\s@]+@[^\s@]+\.[^\s@]+$/;
+    if (email === "") {
+      document.getElementById("emailError").textContent = "⚠️ Email is required.";
+      valid = false;
+    } else if (!emailRegex.test(email)) {
+      document.getElementById("emailError").textContent = "⚠️ Enter a valid email address.";
+      valid = false;
+    }
+
+    // Password validation
+    if (password.length < 6) {
+      document.getElementById("passwordError").textContent = "⚠️ Password must be at least 6 characters.";
+      valid = false;
+    }
+
+    // Final result
+    if (valid) {
+      document.getElementById("successMsg").textContent = "✅ Form submitted successfully!";
+      document.getElementById("successMsg").style.display = "block";
+    }
+  });
+</script>
+
+</body>
+</html>
