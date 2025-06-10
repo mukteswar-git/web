@@ -19,7 +19,7 @@ html, body {
 header {
   height: 60px;
   flex-shrink: 0;
-  background-color: #1E3A8A;
+  background-color: #182C61;
   display: flex;
   justify-content: space-between;
   align-items: center;
