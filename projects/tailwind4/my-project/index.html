@@ -1,13 +1,305 @@
-<!doctype html>
-<html>
+<!DOCTYPE html>
+<html lang="en">
 <head>
-  <meta charset="UTF-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <link href="/src/style.css" rel="stylesheet">
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>GrowEdge Coaching</title>
+  <script src="https://cdn.tailwindcss.com"></script>
+  <style>
+    :root {
+      --peach: #FFD9C0;
+      --white: #FFFFFF;
+      --dark-blue: #1e3a8a;
+    }
+  </style>
 </head>
-<body>
-  <h1 class="text-3xl font-bold underline">
-    Hello world!
-  </h1>
+<body class="bg-white text-[#1e3a8a] font-sans">
+  <!-- Hero Section -->
+  <section class="bg-[var(--peach)] py-16 px-6 text-center">
+    <h1 class="text-4xl md:text-5xl font-bold mb-4">Unlock Your Potential</h1>
+    <p class="text-lg md:text-xl mb-6">Personal Coaching to Build Confidence, Clarity & Growth</p>
+    <a href="#book" class="bg-[var(--dark-blue)] text-white px-6 py-3 rounded-full font-medium hover:opacity-90 transition">Book Free Call</a>
+  </section>
+
+  <!-- About Section -->
+  <section class="py-16 px-6 max-w-4xl mx-auto">
+    <h2 class="text-3xl font-bold mb-4">About Priya Verma</h2>
+    <p class="mb-4">Hi, I'm Priya — a certified life coach helping individuals overcome mental blocks and step into their best selves. With over 5 years of experience, I’ve helped 100+ clients gain clarity and confidence through personalized coaching.</p>
+    <img src="https://via.placeholder.com/300x200" alt="Priya Verma" class="mx-auto rounded-xl shadow mt-6">
+  </section>
+
+  <!-- Services Section -->
+  <section class="bg-[var(--peach)] py-16 px-6">
+    <h2 class="text-3xl font-bold text-center mb-8">Services Offered</h2>
+    <div class="grid md:grid-cols-2 lg:grid-cols-4 gap-6 max-w-6xl mx-auto">
+      <div class="bg-white p-6 rounded-xl shadow">
+        <h3 class="text-xl font-semibold mb-2">Confidence Coaching</h3>
+        <p>Overcome self-doubt and build a strong inner voice.</p>
+      </div>
+      <div class="bg-white p-6 rounded-xl shadow">
+        <h3 class="text-xl font-semibold mb-2">Goal-Setting Sessions</h3>
+        <p>Define clear life goals with a path to reach them.</p>
+      </div>
+      <div class="bg-white p-6 rounded-xl shadow">
+        <h3 class="text-xl font-semibold mb-2">Time Management</h3>
+        <p>Master your daily schedule with simple strategies.</p>
+      </div>
+      <div class="bg-white p-6 rounded-xl shadow">
+        <h3 class="text-xl font-semibold mb-2">Group Coaching</h3>
+        <p>Join a like-minded group to grow and stay accountable.</p>
+      </div>
+    </div>
+  </section>
+
+  <!-- CTA Section -->
+  <section id="book" class="py-16 px-6 text-center bg-[var(--dark-blue)] text-white">
+    <h2 class="text-3xl font-bold mb-4">Ready to Transform Your Life?</h2>
+    <p class="mb-6">Schedule your free 20-minute discovery call and take the first step today.</p>
+    <a href="https://calendly.com/growedge/free-session" target="_blank" class="bg-white text-[var(--dark-blue)] px-6 py-3 rounded-full font-medium hover:bg-[var(--peach)] transition">Book Now</a>
+  </section>
+
+  <!-- About the Coach Section -->
+<section class="py-16 px-6 bg-white text-[#1e3a8a]">
+  <div class="max-w-6xl mx-auto grid md:grid-cols-2 gap-12 items-center">
+    
+    <!-- Left: Image -->
+    <div class="text-center md:text-left">
+      <img src="https://via.placeholder.com/400x400" alt="Priya Verma" class="w-72 h-72 rounded-full object-cover mx-auto md:mx-0 shadow-lg" />
+    </div>
+
+    <!-- Right: Text -->
+    <div>
+      <h2 class="text-3xl font-bold mb-4">Meet Priya Verma</h2>
+      <p class="mb-4">
+        Hi, I'm Priya — a certified life coach passionate about helping individuals overcome self-doubt, build unshakable confidence, and live with purpose.
+      </p>
+      <p class="mb-4 italic">
+        “I believe everyone has the power to grow. My mission is to help you find clarity, build mental resilience, and unlock your full potential.”
+      </p>
+      <ul class="list-disc list-inside space-y-2">
+        <li><strong>Certified Life Coach</strong> – International Coaching Federation (ICF)</li>
+        <li>5+ years of coaching experience</li>
+        <li>100+ clients across India and abroad</li>
+        <li>Specialized in personal development & mindset coaching</li>
+      </ul>
+    </div>
+  </div>
+</section>
+
+<!-- Services Offered Section -->
+<section class="bg-[#FFD9C0] py-16 px-6">
+  <h2 class="text-3xl font-bold text-center text-[#1e3a8a] mb-10">Services Offered</h2>
+
+  <div class="grid md:grid-cols-2 lg:grid-cols-4 gap-8 max-w-6xl mx-auto">
+    
+    <!-- Confidence Coaching -->
+    <div class="bg-white rounded-xl shadow-md p-6 hover:shadow-lg transition">
+      <div class="text-4xl mb-4">🧠</div>
+      <h3 class="text-xl font-semibold text-[#1e3a8a] mb-2">Confidence Coaching</h3>
+      <p class="text-sm text-gray-700">Overcome self-doubt, unlock your voice, and build self-belief through weekly Zoom sessions (45 mins).</p>
+    </div>
+
+    <!-- Goal-Setting Sessions -->
+    <div class="bg-white rounded-xl shadow-md p-6 hover:shadow-lg transition">
+      <div class="text-4xl mb-4">🎯</div>
+      <h3 class="text-xl font-semibold text-[#1e3a8a] mb-2">Goal-Setting Sessions</h3>
+      <p class="text-sm text-gray-700">Set meaningful personal or professional goals with action steps. Includes 2 live calls and a progress worksheet.</p>
+    </div>
+
+    <!-- Time Management Coaching -->
+    <div class="bg-white rounded-xl shadow-md p-6 hover:shadow-lg transition">
+      <div class="text-4xl mb-4">🕰️</div>
+      <h3 class="text-xl font-semibold text-[#1e3a8a] mb-2">Time Management</h3>
+      <p class="text-sm text-gray-700">Learn simple, actionable techniques to manage your day better. One 1-hour Zoom session + planner PDF.</p>
+    </div>
+
+    <!-- Group Coaching Program -->
+    <div class="bg-white rounded-xl shadow-md p-6 hover:shadow-lg transition">
+      <div class="text-4xl mb-4">💬</div>
+      <h3 class="text-xl font-semibold text-[#1e3a8a] mb-2">Group Coaching</h3>
+      <p class="text-sm text-gray-700">Join a supportive 4-week program with weekly group calls, accountability partners, and growth tools.</p>
+    </div>
+
+  </div>
+</section>
+
+
+  <!-- How It Works Section -->
+<section class="bg-white py-16 px-6 text-center">
+  <h2 class="text-3xl font-bold mb-10 text-[#1e3a8a]">How It Works</h2>
+
+  <div class="max-w-6xl mx-auto grid md:grid-cols-3 gap-8 text-left">
+    <!-- Step 1 -->
+    <div class="bg-white p-6 rounded-xl shadow-md">
+      <div class="text-[#1e3a8a] text-4xl font-bold mb-2">1</div>
+      <h3 class="text-xl font-semibold mb-2 text-[#1e3a8a]">Book a Free Call</h3>
+      <p>Choose a convenient time to speak with Priya and explore your challenges.</p>
+    </div>
+
+    <!-- Step 2 -->
+    <div class="bg-white p-6 rounded-xl shadow-md">
+      <div class="text-[#1e3a8a] text-4xl font-bold mb-2">2</div>
+      <h3 class="text-xl font-semibold mb-2 text-[#1e3a8a]">Get a Personalized Plan</h3>
+      <p>After understanding your needs, receive a coaching plan tailored for you.</p>
+    </div>
+
+    <!-- Step 3 -->
+    <div class="bg-white p-6 rounded-xl shadow-md">
+      <div class="text-[#1e3a8a] text-4xl font-bold mb-2">3</div>
+      <h3 class="text-xl font-semibold mb-2 text-[#1e3a8a]">Start Your Journey</h3>
+      <p>Begin your transformation with confidence and guided support every step of the way.</p>
+    </div>
+  </div>
+
+  <!-- CTA Button -->
+  <div class="mt-10">
+    <a href="https://calendly.com/growedge/free-session" target="_blank"
+       class="inline-block bg-[#1e3a8a] text-white px-8 py-3 rounded-full font-medium hover:bg-white hover:text-[#1e3a8a] border border-[#1e3a8a] transition">
+      Book Your Free Call
+    </a>
+  </div>
+</section>
+<!-- Testimonials Section -->
+<section class="bg-[#FFD9C0] py-16 px-6">
+  <h2 class="text-3xl font-bold text-center text-[#1e3a8a] mb-10">What Clients Say</h2>
+
+  <div class="grid md:grid-cols-2 lg:grid-cols-3 gap-8 max-w-6xl mx-auto">
+
+    <!-- Testimonial 1 -->
+    <div class="bg-white rounded-xl p-6 shadow-md hover:shadow-lg transition text-[#1e3a8a]">
+      <div class="flex items-center mb-4">
+        <img src="https://via.placeholder.com/60" alt="Client 1" class="rounded-full w-14 h-14 mr-4" />
+        <div>
+          <p class="font-semibold">Ananya Sharma</p>
+          <div class="text-yellow-400 text-sm">★★★★★</div>
+        </div>
+      </div>
+      <p class="text-sm text-gray-700">“Priya helped me regain clarity and self-belief when I felt stuck in my career. Her sessions are life-changing!”</p>
+    </div>
+
+    <!-- Testimonial 2 -->
+    <div class="bg-white rounded-xl p-6 shadow-md hover:shadow-lg transition text-[#1e3a8a]">
+      <div class="flex items-center mb-4">
+        <img src="https://via.placeholder.com/60" alt="Client 2" class="rounded-full w-14 h-14 mr-4" />
+        <div>
+          <p class="font-semibold">Rohit Mehta</p>
+          <div class="text-yellow-400 text-sm">★★★★★</div>
+        </div>
+      </div>
+      <p class="text-sm text-gray-700">“From time management to building confidence, the coaching was precise and personalized. Highly recommend GrowEdge!”</p>
+    </div>
+
+    <!-- Testimonial 3 -->
+    <div class="bg-white rounded-xl p-6 shadow-md hover:shadow-lg transition text-[#1e3a8a]">
+      <div class="flex items-center mb-4">
+        <img src="https://via.placeholder.com/60" alt="Client 3" class="rounded-full w-14 h-14 mr-4" />
+        <div>
+          <p class="font-semibold">Simran Kaur</p>
+          <div class="text-yellow-400 text-sm">★★★★★</div>
+        </div>
+      </div>
+      <p class="text-sm text-gray-700">“I joined the group coaching program with low expectations and left with a new mindset and new habits. Game changer!”</p>
+    </div>
+
+  </div>
+</section>
+
+  <!-- Lead Capture CTA Banner -->
+<section class="bg-[#1e3a8a] text-white py-16 px-6 text-center">
+  <div class="max-w-3xl mx-auto">
+    <h2 class="text-3xl font-bold mb-4">Ready to take control of your life?</h2>
+    <p class="text-base mb-8">No payment needed. Just a 20-minute conversation to see if coaching is right for you.</p>
+    <a href="https://calendly.com/growedge/free-session" target="_blank"
+       class="bg-white text-[#1e3a8a] px-6 py-3 rounded-full font-semibold hover:bg-[#FFD9C0] hover:text-[#1e3a8a] transition">
+      Schedule Your Free Call
+    </a>
+  </div>
+</section>
+
+<!-- Contact Section -->
+<section class="bg-[#FFD9C0] py-16 px-6 text-[#1e3a8a]">
+  <div class="max-w-4xl mx-auto">
+    <h2 class="text-3xl font-bold text-center mb-10">Get in Touch</h2>
+
+    <!-- Contact Form -->
+    <form action="https://formsubmit.co/your-email@example.com" method="POST" class="bg-white p-8 rounded-xl shadow-md space-y-6">
+      <div class="grid md:grid-cols-2 gap-6">
+        <input type="text" name="name" required placeholder="Your Name"
+               class="w-full p-3 border border-gray-300 rounded-md focus:outline-none focus:ring-2 focus:ring-[#1e3a8a]"/>
+        <input type="email" name="email" required placeholder="Your Email"
+               class="w-full p-3 border border-gray-300 rounded-md focus:outline-none focus:ring-2 focus:ring-[#1e3a8a]"/>
+      </div>
+      <textarea name="message" required placeholder="Your Message"
+                class="w-full p-3 border border-gray-300 rounded-md h-32 focus:outline-none focus:ring-2 focus:ring-[#1e3a8a]"></textarea>
+      <button type="submit"
+              class="bg-[#1e3a8a] text-white px-6 py-3 rounded-md hover:bg-white hover:text-[#1e3a8a] border border-[#1e3a8a] transition">
+        Send Message
+      </button>
+    </form>
+
+    <!-- Contact Info -->
+    <div class="mt-12 text-center space-y-4">
+      <p><strong>Email:</strong> <a href="mailto:hello@growedge.in" class="underline hover:text-[#1e3a8a]">hello@growedge.in</a></p>
+      <p><strong>Phone:</strong> <a href="tel:+911234567890" class="underline hover:text-[#1e3a8a]">+91 12345 67890</a></p>
+      
+      <!-- Social Icons -->
+      <div class="flex justify-center space-x-6 mt-4 text-2xl">
+        <a href="#" class="hover:text-blue-600"><i class="fab fa-linkedin"></i></a>
+        <a href="#" class="hover:text-pink-600"><i class="fab fa-instagram"></i></a>
+        <a href="#" class="hover:text-blue-400"><i class="fab fa-facebook"></i></a>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- Floating WhatsApp Button -->
+<a href="https://wa.me/911234567890" target="_blank"
+   class="fixed bottom-6 right-6 bg-green-500 text-white p-4 rounded-full shadow-lg hover:scale-105 transition"
+   aria-label="Chat on WhatsApp">
+  <svg xmlns="http://www.w3.org/2000/svg" class="w-6 h-6" fill="currentColor" viewBox="0 0 24 24">
+    <path d="M20.52 3.48a12.2 12.2 0 0 0-17.24 0A12.17 12.17 0 0 0 1 12.11a12.27 12.27 0 0 0 1.69 6.16L1 23l4.85-1.59A12.23 12.23 0 0 0 12.09 23a12.17 12.17 0 0 0 8.43-3.48 12.18 12.18 0 0 0 0-17.04zM12.09 21a10.07 10.07 0 0 1-5.29-1.5l-.38-.23-2.88.95.94-2.8-.25-.4A10.07 10.07 0 0 1 2 12.11a10.17 10.17 0 0 1 3-7.21 10.24 10.24 0 0 1 14.21 0 10.17 10.17 0 0 1 0 14.42 10.18 10.18 0 0 1-7.12 2.68z"/>\n
+    <path d="M17.1 14.7l-2.51-.73a.73.73 0 0 0-.69.18l-.56.57a6.07 6.07 0 0 1-2.8-2.8l.57-.57a.73.73 0 0 0 .18-.69l-.73-2.51a.73.73 0 0 0-.69-.51h-.73A1.2 1.2 0 0 0 8 9.13 8.8 8.8 0 0 0 17.1 14.7z"/>\n
+  </svg>
+</a>
+
+
+<!-- Footer -->
+<footer class="bg-[#1e3a8a] text-white py-10 px-6">
+  <div class="max-w-6xl mx-auto grid md:grid-cols-3 gap-8 text-center md:text-left">
+
+    <!-- Brand -->
+    <div>
+      <h3 class="text-2xl font-bold mb-2">GrowEdge</h3>
+      <p class="text-sm text-[#FFD9C0]">Helping you grow with clarity, confidence & coaching.</p>
+    </div>
+
+    <!-- Quick Links -->
+    <div>
+      <h4 class="font-semibold mb-3 text-[#FFD9C0]">Quick Links</h4>
+      <ul class="space-y-2 text-sm">
+        <li><a href="#about" class="hover:underline">About</a></li>
+        <li><a href="#services" class="hover:underline">Services</a></li>
+        <li><a href="#book" class="hover:underline">Book Call</a></li>
+        <li><a href="#contact" class="hover:underline">Contact</a></li>
+      </ul>
+    </div>
+
+    <!-- Social Links -->
+    <div>
+      <h4 class="font-semibold mb-3 text-[#FFD9C0]">Follow Us</h4>
+      <div class="flex justify-center md:justify-start space-x-4 text-xl">
+        <a href="#" class="hover:text-[#FFD9C0]"><i class="fab fa-linkedin"></i></a>
+        <a href="#" class="hover:text-[#FFD9C0]"><i class="fab fa-instagram"></i></a>
+        <a href="#" class="hover:text-[#FFD9C0]"><i class="fab fa-facebook"></i></a>
+      </div>
+    </div>
+  </div>
+
+  <!-- Bottom Note -->
+  <div class="mt-8 text-center text-xs text-[#FFD9C0]">
+    &copy; 2025 GrowEdge Coaching. All rights reserved.
+  </div>
+</footer>
+
 </body>
 </html>
