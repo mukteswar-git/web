@@ -5,9 +5,9 @@
     <meta http-equiv="X-UA-Compatible" content="IE=edge" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <!--~~~~~~~~~~~~~~~ CSS ~~~~~~~~~~~~~~~-->
-    <link rel="stylesheet" href="css/main.css" />
+    <link rel="stylesheet" href="src/style.css" />
     <!--~~~~~~~~~~~~~~~ Favicon ~~~~~~~~~~~~~~~-->
-    <link rel="shortcut icon" href="images/favicon.png" type="image/x-icon" />
+    <link rel="shortcut icon" href="/images/favicon.png" type="image/x-icon" />
     <!--~~~~~~~~~~~~~~~ Font Awesome ~~~~~~~~~~~~~~~-->
     <link
       rel="stylesheet"
@@ -24,13 +24,62 @@
       crossorigin="anonymous"
       referrerpolicy="no-referrer"
     />
+    <!--~~~~~~~~~~~~~~~ Google Font ~~~~~~~~~~~~~~~-->
+    <link href="https://fonts.googleapis.com/css2?family=Londrina+Outline&family=Poppins:ital,wght@0,100;...&display=swap" rel="stylesheet">
+
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Londrina+Outline&family=Roboto:ital,wght@0,100..900;1,100..900&display=swap" rel="stylesheet">
 
     <title>Portfolio || TailwindCSS Website</title>
   </head>
   <body>
     <!--~~~~~~~~~~~~~~~ Header ~~~~~~~~~~~~~~~-->
-    <header>
-      
+    <header id="navbar" class="sticky top-0 z-50 duration-300">
+      <nav class="relative container flex justify-between items-center">
+        <div>
+          <img src="/images/logo.png" alt="logo" id="logo">
+          <img src="/images/logo_white.png" alt="white-logo" id="white-logo">
+        </div>
+
+        <div id="nav-menu">
+          <li>
+            <a href="#quality_services" class="nav-link">Services</a>
+          </li>
+          <li>
+            <a href="#recent_works" class="nav-link">Works</a>
+          </li>
+          <li>
+            <a href="#exp_edu" class="nav-link">Resume</a>
+          </li>
+          <li>
+            <a href="#skills" class="nav-link">Skills</a>
+          </li>
+          <li>
+            <a href="#blogs" class="nav-link">Blogs</a>
+          </li>
+          <li>
+            <a href="#contact" class="nav-link">Contact</a>
+          </li>
+          <li>
+            <button>
+              <span>Hire Me!</span>
+            </button>
+          </li>
+        </div>
+
+        <div id="nav-close">
+          <i class="ri-close-line"></i>
+        </div>
+
+        <div id="theme-toggle">
+          <i class="ri-moon-line"></i>
+
+          <div id="hamburger">
+            <i class="ri-menu-2-line"></i>
+          </div>
+        </div>
+      </nav>
     </header>
 
     <main>

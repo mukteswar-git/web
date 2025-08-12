@@ -1,3 +1,50 @@
 @import "tailwindcss";
+/* @plugin "xyz" */
+/* @import "tailwindcss" prefix(tw); */
+/* tw:text-yellow-500 */
 
-@import url('https://fonts.googleapis.com/css2?family=Londrina+Outline&family=Poppins:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,100;1,200;1,300;1,400;1,500;1,600;1,700;1,800;1,900&display=swap');
+@theme {
+  /* Breakpoints */
+  --breakpoint-sm: 480px;
+  --breakpoint-md: 768px;
+  --breakpoint-lg: 976px;
+  --breakpoint-xl: 1400px;
+
+  /* Colors */
+  --color-sectionColor: hsl(209, 100%, 97%);
+  --color-darkBodyColor: hsl(216, 100%, 4%);
+  --color-darkSectionColor: hsl(211, 100%, 12%);
+  --color-primaryColor: hsl(209, 87%, 21%);
+  --color-primaryColorLight: hsl(209, 74%, 45%);
+  --color-whiteColor: #fff;
+  --color-textColor: #DDD;
+  --color-secondaryColor: red;
+
+  /* Fonts */
+  --font-poppins: "Poppins", sans-serif;
+  --font-Londrina: "Londrina Outline", sans-serif;
+
+  /* Container padding */
+  --container-padding: 10px;
+  --container-md-padding: 30px;
+
+  /* Animations */
+  --animate-scaleAnimation: move 3s linear infinite;
+}
+
+/* Keyframes */
+@keyframes move {
+  50% {
+    transform: scale(1.1);
+  }
+}
+
+@layer base {
+  html {
+    @apply scroll-smooth;
+  }
+
+  body {
+    @apply text-primaryColor font-poppins tracking-wider overflow-x-hidden;
+  }
+}
