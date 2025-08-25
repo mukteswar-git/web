@@ -4,8 +4,87 @@
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <title>Document</title>
+  <link rel="stylesheet" href="src/style.css">
 </head>
-<body>
-  <h1>Hello World!</h1>
+<body class="m-4">
+  <div>
+    <!-- Heading -->
+    <h1 class="text-4xl font-bold">Tailwind CSS</h1>
+
+    <!-- Sub-heading -->
+    <h2 class="text-3xl font-semibold uppercase m-4">Core Concept</h2>
+
+    <!-- List -->
+    <ul class="list-disc pl-16 text-2xl font-medium mt-4">
+      <li>Styling with utility classes</li>
+      <li>Hover, focus, and other states</li>
+      <li>Responsive design</li>
+      <li>Dark mode</li>
+      <li>Theme variables</li>
+      <li>Colors</li>
+      <li>Adding custom styles</li>
+      <li>Detecting classes in source files</li>
+      <li>Function and directives</li>
+    </ul>
+  </div>
+
+  <!-- Styling with utility classes -->
+  <div>
+    <!-- Heading -->
+    <h2 class="text-3xl font-semibold mt-12">Styling with utility classes</h2>
+
+    <!-- description -->
+    <p class="p-4">Building component by combining many utility classes.</p>
+
+    <!-- example -->
+    <p class="font-medium">For example:</p>
+    <pre class="bg-gray-900 text-green-400 p-4 rounded-lg overflow-x-auto text-sm">
+      <code>
+      &lt;div class="mx-auto flex max-w-sm ..."&gt;
+        &lt;img class="size-12 shrink-0" src="/img/logo.svg" alt="ChitChat Logo" /&gt;
+        &lt;div&gt;
+          &lt;div class="text-xl font-medium text-black dark:text-white"&gt;ChitChat&lt;/div&gt;
+          &lt;p class="text-gray-500 dark:text-gray-400"&gt;You have a new message!&lt;/p&gt;
+        &lt;/div&gt;
+      &lt;/div&gt;
+      </code>
+    </pre>
+
+    <!-- Use of utility classes -->
+    <h3 class="text-2xl font-bold mt-4">Use of utility classes:</h3>
+    <ul class="list-disc pl-8 pt-2">
+      <li>Styling hover and focus states</li>
+      <li>Media queries and breakpoints</li>
+      <li>Targeting dark mode</li>
+      <li>Using class composition</li>
+      <li>Using arbitrary values</li>
+      <li>complex selectors</li>
+    </ul>
+
+    <!-- Managing duplication -->
+    <h3 class="text-2xl font-bold mt-4">Managing duplication</h3>
+    <ul class="list-disc pl-8 pt-2">
+      <li>Using loops</li>
+      <li>Using multi-cursor editing</li>
+      <li>Using components</li>
+      <li>Using custom CSS</li>
+    </ul>
+
+    <!-- Managing style conflicts -->
+    <h3 class="text-2xl font-bold mt-4">Managing style conflicts</h3>
+    <ul class="list-disc pl-8 pt-2">
+      <li>Conflicting utility classes</li>
+      <li>Using important modifier</li>
+      <li>Using important flag</li>
+      <li>Using prefix option</li>
+    </ul>
+    <button
+  class="bg-yellow-600 
+         hover:bg-indigo-700 
+         hover:not-focus:bg-red-500 
+         focus:bg-green-500">
+  Click me
+</button>
+  </div>
 </body>
 </html>

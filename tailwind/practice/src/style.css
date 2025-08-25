@@ -1,6 +1,1 @@
 @import "tailwindcss";
-
-.typography {
-  font-size: var(--text-base);
-  color: var(--color-slate-500)
-}
